@@ -11,6 +11,10 @@
 		49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8B26628FBF008EF8DE /* Experience.rcproject */; };
 		49649C8E26628FC1008EF8DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49649C8D26628FC1008EF8DE /* Assets.xcassets */; };
 		49649C9126628FC1008EF8DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49649C9026628FC1008EF8DE /* Preview Assets.xcassets */; };
+		F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59AD2662AFC200C1BD98 /* Hexagon.swift */; };
+		F10B59B02662B04000C1BD98 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59AF2662B04000C1BD98 /* TileView.swift */; };
+		F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B12662B1B200C1BD98 /* Tile.swift */; };
+		F10B59B52662B21100C1BD98 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B42662B21100C1BD98 /* Terrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		49649C8D26628FC1008EF8DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49649C9026628FC1008EF8DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49649C9226628FC1008EF8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10B59AD2662AFC200C1BD98 /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
+		F10B59AF2662B04000C1BD98 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		F10B59B12662B1B200C1BD98 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		F10B59B42662B21100C1BD98 /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,8 @@
 		49649C8626628FBF008EF8DE /* Minigames */ = {
 			isa = PBXGroup;
 			children = (
-				49649C8926628FBF008EF8DE /* MainView.swift */,
+				F10B59B32662B1BD00C1BD98 /* backend */,
+				F10B59AB2662AE9100C1BD98 /* Views */,
 				49649C8B26628FBF008EF8DE /* Experience.rcproject */,
 				49649C8D26628FC1008EF8DE /* Assets.xcassets */,
 				49649C9226628FC1008EF8DE /* Info.plist */,
@@ -67,6 +76,33 @@
 				49649C9026628FC1008EF8DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F10B59AB2662AE9100C1BD98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49649C8926628FBF008EF8DE /* MainView.swift */,
+				F10B59AC2662AEA300C1BD98 /* board */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F10B59AC2662AEA300C1BD98 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59AD2662AFC200C1BD98 /* Hexagon.swift */,
+				F10B59AF2662B04000C1BD98 /* TileView.swift */,
+			);
+			path = board;
+			sourceTree = "<group>";
+		};
+		F10B59B32662B1BD00C1BD98 /* backend */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59B12662B1B200C1BD98 /* Tile.swift */,
+				F10B59B42662B21100C1BD98 /* Terrain.swift */,
+			);
+			path = backend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49649C8A26628FBF008EF8DE /* MainView.swift in Sources */,
+				F10B59B52662B21100C1BD98 /* Terrain.swift in Sources */,
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
+				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
+				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
+				F10B59B02662B04000C1BD98 /* TileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
