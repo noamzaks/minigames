@@ -8,3 +8,4 @@ struct MinigamesApp: App {
         }
     }
 }
+

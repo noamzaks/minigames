@@ -1,10 +1,3 @@
-//
-//  Hexagon.swift
-//  Minigames
-//
-//  Created by Tomer Israeli on 29/05/2021.
-//
-
 import SwiftUI
 
 struct Hexagon: Shape {
