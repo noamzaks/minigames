@@ -2,21 +2,18 @@ import Foundation
 
 struct SettlersGame {
     let tiles: [Tile]
-    private(set) var hands: [[Resource: UInt]]
-    private(set) var bank = [Resource: UInt]()
+    private(set) var hands: [ResourceSet]
+    private(set) var bank = ResourceSet()
     var turn: UInt
     
     init(for players: UInt) {
         turn = 0
         
-        var emptyHand = [Resource: UInt]()
-        
         for resource in Resource.allCases {
-            bank[resource] = 19
-            emptyHand[resource] = 0
+            bank.add(19, of: resource)
         }
         
-        hands = [[Resource: UInt]](repeating: emptyHand, count: Int(players))
+        hands = [ResourceSet](repeating: ResourceSet(), count: Int(players))
         
         let resources = SettlersGame.initialResources.shuffled()
         let dice = SettlersGame.initialDice.shuffled()
@@ -27,17 +24,9 @@ struct SettlersGame {
     }
     
     mutating func transfer(_ resources: [Resource: UInt], from one: UInt, to two: UInt) -> Bool {
-        for (resource, count) in resources {
-            if hands[one][resource]! < count {
-                return false
-            }
-        }
+        if hands[one] < resources { return false }
         
-        for (resource, count) in resources {
-            hands[one][resource] = hands[one][resource]! - count
-            hands[two][resource] = hands[two][resource]! + count
-        }
-        
+        hands[one] += hands[two]
         return true
     }
     
@@ -47,7 +36,7 @@ struct SettlersGame {
         
         // TODO: Check if user is allowed to build at location
         
-        if !pay(BuildingCost.of(building), from: player) { return false }
+        if hands[player] < BuildingCost.of(building) { return false }
         
         // FIXME
         // tiles[tile].buildings[side] = player
@@ -55,45 +44,31 @@ struct SettlersGame {
         return true
     }
     
-    private mutating func pay(_ resources: [Resource: UInt], from player: UInt) -> Bool {
-        for (resource, count) in resources {
-            if hands[player][resource]! < count {
-                return false
-            }
-        }
-        
-        for (resource, count) in resources {
-            hands[player][resource] = hands[player][resource]! - count
-        }
-        
-        return true
-    }
-    
     struct BuildingCost {
-        static let road: [Resource: UInt] = [
+        static let road = ResourceSet(from: [
             .lumber: 1,
             .brick: 1,
-        ]
+        ])
         
-        static let settlement: [Resource: UInt] = [
+        static let settlement = ResourceSet(from: [
             .lumber: 1,
             .brick: 1,
             .grain: 1,
             .wool: 1,
-        ]
+        ])
         
-        static let city: [Resource: UInt] = [
+        static let city = ResourceSet(from: [
             .grain: 2,
             .ore: 3,
-        ]
+        ])
         
-        static let development: [Resource: UInt] = [
+        static let development = ResourceSet(from: [
             .grain: 1,
             .wool: 1,
             .ore: 1,
-        ]
+        ])
         
-        static func of(_ building: Building) -> [Resource: UInt] {
+        static func of(_ building: Building) -> ResourceSet {
             switch(building) {
             case .road:
                 return road
