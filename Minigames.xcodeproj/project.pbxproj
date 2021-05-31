@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49322F012664E4F9002E5DEE /* ResourceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49322F002664E4F9002E5DEE /* ResourceSet.swift */; };
 		49649C8A26628FBF008EF8DE /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8926628FBF008EF8DE /* Main.swift */; };
 		49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8B26628FBF008EF8DE /* Experience.rcproject */; };
 		49649C8E26628FC1008EF8DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49649C8D26628FC1008EF8DE /* Assets.xcassets */; };
@@ -18,10 +17,14 @@
 		F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B12662B1B200C1BD98 /* Tile.swift */; };
 		F10B59B52662B21100C1BD98 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B42662B21100C1BD98 /* Resource.swift */; };
 		F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B62663A48900C1BD98 /* HexagonStack.swift */; };
+		F10B59C22665515C00C1BD98 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59C12665515C00C1BD98 /* Player.swift */; };
+		F10B59C52665522600C1BD98 /* Array+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59C42665522600C1BD98 /* Array+Resource.swift */; };
+		F10B59C7266557EB00C1BD98 /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59C6266557EB00C1BD98 /* Terrain.swift */; };
+		F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59C82665595900C1BD98 /* Array+Tile.swift */; };
+		F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59CA26655B3A00C1BD98 /* SettlersGameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49322F002664E4F9002E5DEE /* ResourceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSet.swift; sourceTree = "<group>"; };
 		49649C8426628FBF008EF8DE /* Minigames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minigames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49649C8926628FBF008EF8DE /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		49649C8B26628FBF008EF8DE /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
@@ -34,6 +37,11 @@
 		F10B59B12662B1B200C1BD98 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		F10B59B42662B21100C1BD98 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		F10B59B62663A48900C1BD98 /* HexagonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HexagonStack.swift; path = Minigames/Views/board/HexagonStack.swift; sourceTree = SOURCE_ROOT; };
+		F10B59C12665515C00C1BD98 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F10B59C42665522600C1BD98 /* Array+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Resource.swift"; sourceTree = "<group>"; };
+		F10B59C6266557EB00C1BD98 /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		F10B59C82665595900C1BD98 /* Array+Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Tile.swift"; sourceTree = "<group>"; };
+		F10B59CA26655B3A00C1BD98 /* SettlersGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlersGameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,13 @@
 		49E8BCBE2662D222001EF4B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F10B59C32665521400C1BD98 /* extensions */,
 				F10B59B12662B1B200C1BD98 /* Tile.swift */,
 				F10B59B42662B21100C1BD98 /* Resource.swift */,
-				49322F002664E4F9002E5DEE /* ResourceSet.swift */,
 				49E8BCBF2662D268001EF4B2 /* SettlersGame.swift */,
+				F10B59C12665515C00C1BD98 /* Player.swift */,
+				F10B59C6266557EB00C1BD98 /* Terrain.swift */,
+				F10B59CA26655B3A00C1BD98 /* SettlersGameState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +123,15 @@
 				49649C8926628FBF008EF8DE /* Main.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F10B59C32665521400C1BD98 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59C42665522600C1BD98 /* Array+Resource.swift */,
+				F10B59C82665595900C1BD98 /* Array+Tile.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,15 +203,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10B59C52665522600C1BD98 /* Array+Resource.swift in Sources */,
 				49649C8A26628FBF008EF8DE /* Main.swift in Sources */,
 				F10B59B52662B21100C1BD98 /* Resource.swift in Sources */,
+				F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */,
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
 				49E8BCC22662E040001EF4B2 /* Core.swift in Sources */,
 				49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */,
-				49322F012664E4F9002E5DEE /* ResourceSet.swift in Sources */,
+				F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */,
 				F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */,
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
+				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
+				F10B59C7266557EB00C1BD98 /* Terrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,9 +18,10 @@ struct HexagonStack<Item>: View where Item: View {
     /// the space between hexagons sides in the stack
     var spacing: CGFloat = 10
     
-    private var viewForIndex: (Int) -> Item
+    /// row, column, itemSize
+    private var viewForIndex: (Int, Int, CGFloat) -> Item
     
-    init(_ maxColumns: Int = 5, _ minColumns: Int = 3,@ViewBuilder viewForIndex: @escaping (Int) -> Item) {
+    init(_ maxColumns: Int = 5, _ minColumns: Int = 3,@ViewBuilder viewForIndex: @escaping (Int, Int, CGFloat) -> Item) {
         self.maxColumns = maxColumns
         self.minColumns = minColumns
         self.viewForIndex = viewForIndex
@@ -47,10 +48,8 @@ struct HexagonStack<Item>: View where Item: View {
                 ForEach(Array(numberOfColumnsByRow.enumerated()), id: \.offset){ row, numberOfColumns in
                     HStack(spacing: horizontalOffset) {
                         ForEach(0..<numberOfColumns){ column in
-                            viewForIndex(index(at: column, row: row))
+                            viewForIndex(row, column, itemSize)
                                 .frame(width: itemSize, height: itemSize)
-                                .clipShape(Hexagon())
-                                .overlay(Hexagon().stroke())
                         }
                     }
                 }
@@ -112,7 +111,7 @@ struct HexagonStack<Item>: View where Item: View {
 struct HexagonStack_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            HexagonStack{ index in
+            HexagonStack{ index,_,_  in
                 Text("\(index)")
             }
         }
