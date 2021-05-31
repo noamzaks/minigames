@@ -16,6 +16,7 @@
 		F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59AD2662AFC200C1BD98 /* Hexagon.swift */; };
 		F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B12662B1B200C1BD98 /* Tile.swift */; };
 		F10B59B52662B21100C1BD98 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B42662B21100C1BD98 /* Resource.swift */; };
+		F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B62663A48900C1BD98 /* HexagonStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F10B59AD2662AFC200C1BD98 /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		F10B59B12662B1B200C1BD98 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		F10B59B42662B21100C1BD98 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		F10B59B62663A48900C1BD98 /* HexagonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HexagonStack.swift; path = Minigames/Views/board/HexagonStack.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F10B59AD2662AFC200C1BD98 /* Hexagon.swift */,
+				F10B59B62663A48900C1BD98 /* HexagonStack.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
 				49E8BCC22662E040001EF4B2 /* Core.swift in Sources */,
 				49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */,
+				F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */,
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
 				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
 			);

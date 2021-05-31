@@ -1,20 +1,24 @@
 import SwiftUI
 
 struct Hexagon: Shape {
-    private static let margin = 0.2
+    
+    var baseAngle: CGFloat = 30
     
     func path(in rect: CGRect) -> Path {
-        let size = Double(min(rect.size.height, rect.size.width))
         var p = Path()
+        let R = min(rect.height, rect.width)/2
         
-        p.move(to: CGPoint(x: 0, y: size * (1.0 - Hexagon.margin)))
-        p.addLine(to: CGPoint(x: size / 2, y: size))
-        p.addLine(to: CGPoint(x: size, y: size * (1.0 - Hexagon.margin)))
-        p.addLine(to: CGPoint(x: size, y: size * Hexagon.margin))
-        p.addLine(to: CGPoint(x: size / 2, y: 0))
-        p.addLine(to: CGPoint(x: 0, y: size * Hexagon.margin))
-        p.addLine(to: CGPoint(x: 0, y: size * (1.0 - Hexagon.margin)))
+        p.move(to: getPoint(angle: 0, radius: R, at: rect))
         
+        for k in 1...6 {
+            p.addLine(to: getPoint(angle: CGFloat(k * 60), radius: R, at: rect))
+        }
         return p
+    }
+    
+    private func getPoint(angle: CGFloat, radius R: CGFloat, at rect: CGRect) -> CGPoint{
+        let angleRad = (baseAngle + angle) * CGFloat.pi / 180
+        
+        return CGPoint(x: R * cos(angleRad) + rect.midX, y: R * sin(angleRad) + rect.midY)
     }
 }

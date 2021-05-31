@@ -4,7 +4,9 @@ import SwiftUI
 struct MinigamesApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            HexagonStack {_ in
+                Text("cool")
+            }
         }
     }
 }
@@ -44,5 +46,9 @@ struct ResourceBarPreviews: PreviewProvider {
             ResourceBar(resources: [.lumber: 2])
         }
         .preferredColorScheme(.dark)
+        
+        Hexagon()
+        
+        Circle()
     }
 }
