@@ -8,5 +8,8 @@
 import Foundation
 
 enum SettlersGameState {
-    case playerTurn(playerIndex: Int)
+    case firstTurn(player: Player)
+    case playerTurn(placeKnight: Bool, diceRolled: Bool)
+    case waitingForPlayers(connectedPlayers: [Player]?)
+    case ended(winner: Player?)
 }
