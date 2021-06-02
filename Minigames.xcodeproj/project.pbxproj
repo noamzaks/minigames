@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49649C8A26628FBF008EF8DE /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8926628FBF008EF8DE /* Main.swift */; };
+		49649C8A26628FBF008EF8DE /* SettlersGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8926628FBF008EF8DE /* SettlersGameApp.swift */; };
 		49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 49649C8B26628FBF008EF8DE /* Experience.rcproject */; };
 		49649C8E26628FC1008EF8DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49649C8D26628FC1008EF8DE /* Assets.xcassets */; };
 		49649C9126628FC1008EF8DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49649C9026628FC1008EF8DE /* Preview Assets.xcassets */; };
 		49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8BCBF2662D268001EF4B2 /* SettlersGame.swift */; };
-		49E8BCC22662E040001EF4B2 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8BCC12662E040001EF4B2 /* Core.swift */; };
 		F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59AD2662AFC200C1BD98 /* Hexagon.swift */; };
 		F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B12662B1B200C1BD98 /* Tile.swift */; };
 		F10B59B52662B21100C1BD98 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59B42662B21100C1BD98 /* Resource.swift */; };
@@ -24,17 +23,22 @@
 		F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59CA26655B3A00C1BD98 /* SettlersGameState.swift */; };
 		F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59CC26669B7B00C1BD98 /* SetllersGameError.swift */; };
 		F10B59CF26669D2B00C1BD98 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59CE26669D2B00C1BD98 /* Building.swift */; };
+		F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D22667509200C1BD98 /* SettlersGameViewModel.swift */; };
+		F10B59D52667BB7600C1BD98 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D42667BB7600C1BD98 /* GameView.swift */; };
+		F10B59D82667BC1E00C1BD98 /* LocalSettlersGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D72667BC1E00C1BD98 /* LocalSettlersGame.swift */; };
+		F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D92667D45000C1BD98 /* BoardView.swift */; };
+		F10B59DC2667DA3D00C1BD98 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DB2667DA3D00C1BD98 /* TileView.swift */; };
+		F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DE26680E0100C1BD98 /* ResourceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49649C8426628FBF008EF8DE /* Minigames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minigames.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49649C8926628FBF008EF8DE /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		49649C8926628FBF008EF8DE /* SettlersGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlersGameApp.swift; sourceTree = "<group>"; };
 		49649C8B26628FBF008EF8DE /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		49649C8D26628FC1008EF8DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49649C9026628FC1008EF8DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49649C9226628FC1008EF8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E8BCBF2662D268001EF4B2 /* SettlersGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlersGame.swift; sourceTree = "<group>"; };
-		49E8BCC12662E040001EF4B2 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		F10B59AD2662AFC200C1BD98 /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		F10B59B12662B1B200C1BD98 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		F10B59B42662B21100C1BD98 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -46,6 +50,12 @@
 		F10B59CA26655B3A00C1BD98 /* SettlersGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlersGameState.swift; sourceTree = "<group>"; };
 		F10B59CC26669B7B00C1BD98 /* SetllersGameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetllersGameError.swift; sourceTree = "<group>"; };
 		F10B59CE26669D2B00C1BD98 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		F10B59D22667509200C1BD98 /* SettlersGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlersGameViewModel.swift; sourceTree = "<group>"; };
+		F10B59D42667BB7600C1BD98 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F10B59D72667BC1E00C1BD98 /* LocalSettlersGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSettlersGame.swift; sourceTree = "<group>"; };
+		F10B59D92667D45000C1BD98 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardView.swift; path = Minigames/Views/board/BoardView.swift; sourceTree = SOURCE_ROOT; };
+		F10B59DB2667DA3D00C1BD98 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = Minigames/Views/board/TileView.swift; sourceTree = SOURCE_ROOT; };
+		F10B59DE26680E0100C1BD98 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +88,13 @@
 		49649C8626628FBF008EF8DE /* Minigames */ = {
 			isa = PBXGroup;
 			children = (
+				F10B59D02667505E00C1BD98 /* ViewModels */,
 				49E8BCBE2662D222001EF4B2 /* Models */,
 				F10B59AB2662AE9100C1BD98 /* Views */,
 				49649C8B26628FBF008EF8DE /* Experience.rcproject */,
 				49649C8D26628FC1008EF8DE /* Assets.xcassets */,
 				49649C9226628FC1008EF8DE /* Info.plist */,
 				49649C8F26628FC1008EF8DE /* Preview Content */,
-				49E8BCC12662E040001EF4B2 /* Core.swift */,
 			);
 			path = Minigames;
 			sourceTree = "<group>";
@@ -102,6 +112,8 @@
 			children = (
 				F10B59AD2662AFC200C1BD98 /* Hexagon.swift */,
 				F10B59B62663A48900C1BD98 /* HexagonStack.swift */,
+				F10B59D92667D45000C1BD98 /* BoardView.swift */,
+				F10B59DB2667DA3D00C1BD98 /* TileView.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -109,6 +121,7 @@
 		49E8BCBE2662D222001EF4B2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F10B59D62667BC0C00C1BD98 /* SetllersGames */,
 				F10B59C32665521400C1BD98 /* extensions */,
 				F10B59B12662B1B200C1BD98 /* Tile.swift */,
 				F10B59B42662B21100C1BD98 /* Resource.swift */,
@@ -125,8 +138,10 @@
 		F10B59AB2662AE9100C1BD98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F10B59DD26680DED00C1BD98 /* ResourceBar */,
 				49E8BCBD2662D11F001EF4B2 /* Board */,
-				49649C8926628FBF008EF8DE /* Main.swift */,
+				49649C8926628FBF008EF8DE /* SettlersGameApp.swift */,
+				F10B59D42667BB7600C1BD98 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +153,30 @@
 				F10B59C82665595900C1BD98 /* Array+Tile.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		F10B59D02667505E00C1BD98 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59D22667509200C1BD98 /* SettlersGameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F10B59D62667BC0C00C1BD98 /* SetllersGames */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59D72667BC1E00C1BD98 /* LocalSettlersGame.swift */,
+			);
+			path = SetllersGames;
+			sourceTree = "<group>";
+		};
+		F10B59DD26680DED00C1BD98 /* ResourceBar */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59DE26680E0100C1BD98 /* ResourceView.swift */,
+			);
+			path = ResourceBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,19 +249,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10B59C52665522600C1BD98 /* Array+Resource.swift in Sources */,
-				49649C8A26628FBF008EF8DE /* Main.swift in Sources */,
+				49649C8A26628FBF008EF8DE /* SettlersGameApp.swift in Sources */,
+				F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */,
 				F10B59B52662B21100C1BD98 /* Resource.swift in Sources */,
 				F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */,
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
-				49E8BCC22662E040001EF4B2 /* Core.swift in Sources */,
 				49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */,
 				F10B59CF26669D2B00C1BD98 /* Building.swift in Sources */,
+				F10B59DC2667DA3D00C1BD98 /* TileView.swift in Sources */,
 				F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */,
 				F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */,
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
+				F10B59D82667BC1E00C1BD98 /* LocalSettlersGame.swift in Sources */,
 				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */,
 				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
+				F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */,
+				F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */,
+				F10B59D52667BB7600C1BD98 /* GameView.swift in Sources */,
 				F10B59C7266557EB00C1BD98 /* Terrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
