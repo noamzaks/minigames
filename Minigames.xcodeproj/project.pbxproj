@@ -29,6 +29,11 @@
 		F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D92667D45000C1BD98 /* BoardView.swift */; };
 		F10B59DC2667DA3D00C1BD98 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DB2667DA3D00C1BD98 /* TileView.swift */; };
 		F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DE26680E0100C1BD98 /* ResourceView.swift */; };
+		F10B59E12668C9EE00C1BD98 /* ResourceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */; };
+		F10B59E32668CB0500C1BD98 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E22668CB0500C1BD98 /* PlayerView.swift */; };
+		F10B59E72668CE4000C1BD98 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E62668CE4000C1BD98 /* URLImageView.swift */; };
+		F10B59EA2668F50D00C1BD98 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E92668F50D00C1BD98 /* ImageLoader.swift */; };
+		F10B59EC26691AEF00C1BD98 /* PlayersBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59EB26691AEF00C1BD98 /* PlayersBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		F10B59D92667D45000C1BD98 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardView.swift; path = Minigames/Views/board/BoardView.swift; sourceTree = SOURCE_ROOT; };
 		F10B59DB2667DA3D00C1BD98 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = Minigames/Views/board/TileView.swift; sourceTree = SOURCE_ROOT; };
 		F10B59DE26680E0100C1BD98 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceBarView.swift; sourceTree = "<group>"; };
+		F10B59E22668CB0500C1BD98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F10B59E62668CE4000C1BD98 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		F10B59E92668F50D00C1BD98 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F10B59EB26691AEF00C1BD98 /* PlayersBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,8 @@
 		F10B59AB2662AE9100C1BD98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F10B59E52668CE2500C1BD98 /* support */,
+				F10B59E42668CBD200C1BD98 /* PlayersBar */,
 				F10B59DD26680DED00C1BD98 /* ResourceBar */,
 				49E8BCBD2662D11F001EF4B2 /* Board */,
 				49649C8926628FBF008EF8DE /* SettlersGameApp.swift */,
@@ -175,8 +187,35 @@
 			isa = PBXGroup;
 			children = (
 				F10B59DE26680E0100C1BD98 /* ResourceView.swift */,
+				F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */,
 			);
 			path = ResourceBar;
+			sourceTree = "<group>";
+		};
+		F10B59E42668CBD200C1BD98 /* PlayersBar */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59E22668CB0500C1BD98 /* PlayerView.swift */,
+				F10B59EB26691AEF00C1BD98 /* PlayersBarView.swift */,
+			);
+			path = PlayersBar;
+			sourceTree = "<group>";
+		};
+		F10B59E52668CE2500C1BD98 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59E82668F4EF00C1BD98 /* URLImageView */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		F10B59E82668F4EF00C1BD98 /* URLImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59E62668CE4000C1BD98 /* URLImageView.swift */,
+				F10B59E92668F50D00C1BD98 /* ImageLoader.swift */,
+			);
+			path = URLImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +290,10 @@
 				F10B59C52665522600C1BD98 /* Array+Resource.swift in Sources */,
 				49649C8A26628FBF008EF8DE /* SettlersGameApp.swift in Sources */,
 				F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */,
+				F10B59E32668CB0500C1BD98 /* PlayerView.swift in Sources */,
 				F10B59B52662B21100C1BD98 /* Resource.swift in Sources */,
 				F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */,
+				F10B59EC26691AEF00C1BD98 /* PlayersBarView.swift in Sources */,
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
 				49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */,
 				F10B59CF26669D2B00C1BD98 /* Building.swift in Sources */,
@@ -260,6 +301,8 @@
 				F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */,
 				F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */,
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
+				F10B59E12668C9EE00C1BD98 /* ResourceBarView.swift in Sources */,
+				F10B59EA2668F50D00C1BD98 /* ImageLoader.swift in Sources */,
 				F10B59D82667BC1E00C1BD98 /* LocalSettlersGame.swift in Sources */,
 				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */,
@@ -268,6 +311,7 @@
 				F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */,
 				F10B59D52667BB7600C1BD98 /* GameView.swift in Sources */,
 				F10B59C7266557EB00C1BD98 /* Terrain.swift in Sources */,
+				F10B59E72668CE4000C1BD98 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

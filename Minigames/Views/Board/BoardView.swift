@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BoardView<Game: SettlersGame>: View {
     
-    @ObservedObject var gameVM: SetllersGameViewModel<Game>
+    @ObservedObject var gameVM: SettlersGameViewModel<Game>
         
     var body: some View {
         HexagonStack { row, column, size in
@@ -36,7 +36,7 @@ struct BoardView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        @ObservedObject var vm: SetllersGameViewModel<LocalSettlersGame> = .init("player")
+        @ObservedObject var vm = mocGameViewModel
         
         return BoardView(gameVM: vm)
     }

@@ -69,6 +69,6 @@ struct ResourceView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
         }
             .previewLayout(.fixed(width: 500, height: 60))
-            .environmentObject(Player("cool", [.lumber]))
+            .environmentObject(Player("cool"))
     }
 }

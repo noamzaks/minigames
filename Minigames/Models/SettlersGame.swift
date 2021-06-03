@@ -10,15 +10,15 @@ protocol SettlersGame {
     
     var tilesPublisher:                 Published<[Tile]>.Publisher             { get }
     var playersPublisher:               Published<[Player]>.Publisher           { get }
-    var currentPlayerIndexPublisher:    Published<Int>.Publisher                { get }
+    var currentPlayerIDPublisher:       Published<UUID?>.Publisher              { get }
     var gameStatePublisher:             Published<SettlersGameState>.Publisher  { get }
     
-    var pointsToWin:        Int { get } // how much points are nedded to win the game
-    var localPlayerIndex:   Int { get }
+    var pointsToWin:        Int     { get } // how much points are nedded to win the game
+    var localPlayerID:      UUID    { get }
 
     /// Join or create a new game
     /// - Parameter player: the player to join the game as
-    init(joinAs nickname: String)
+    init(joinAs player: Player)
     
     // MARK: Purchase
     

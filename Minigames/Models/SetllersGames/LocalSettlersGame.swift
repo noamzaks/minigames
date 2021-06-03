@@ -8,23 +8,33 @@
 import Foundation
 
 class LocalSettlersGame: SettlersGame {
+    
     @Published var tiles: [Tile] = []
     var tilesPublisher: Published<[Tile]>.Publisher { $tiles }
     
     @Published var players: [Player] = []
     var playersPublisher: Published<[Player]>.Publisher { $players }
     
-    @Published var currentPlayerIndex: Int = 0
-    var currentPlayerIndexPublisher: Published<Int>.Publisher { $currentPlayerIndex }
+    @Published var currentPlayerID: UUID? = nil
+    var currentPlayerIDPublisher: Published<UUID?>.Publisher { $currentPlayerID }
     
     @Published var gameState: SettlersGameState = SettlersGameState.waitingForPlayers(connectedPlayers: [])
     var gameStatePublisher: Published<SettlersGameState>.Publisher { $gameState }
     
-    var localPlayerIndex: Int = 0
+    var localPlayerID: UUID
+
     var pointsToWin: Int = 10
 
-    required init(joinAs nickanme: String) {
-        players.append(Player(nickanme, LocalSettlersGame.playerInitialResources))
+    required init(joinAs player: Player) {
+        player.resources = LocalSettlersGame.playerInitialResources
+        localPlayerID = player.id
+        players.append(player)
+        
+        currentPlayerID = player.id
+        
+        players.append(Player("moc player 1"))
+        players.append(Player("moc player 2"))
+        players.append(Player("moc player 3"))
         
         //create a borad
         var positions = LocalSettlersGame.boardPosition.shuffled()
@@ -74,6 +84,7 @@ class LocalSettlersGame: SettlersGame {
     }
     
     func finishTurn() throws {
+        currentPlayerID = players.randomElement()!.id
     }
     
     

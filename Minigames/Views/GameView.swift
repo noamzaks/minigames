@@ -7,14 +7,23 @@
 
 import SwiftUI
 
-struct GameView: View {
+struct GameView<Game: SettlersGame>: View {
+    
+    @ObservedObject var gameVM: SettlersGameViewModel<Game>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            PlayersBarView(gameVM: gameVM)
+            BoardView(gameVM: gameVM)
+            ResourceBarView(player: gameVM.localPlayer)
+        }
+        .padding(.vertical)
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(gameVM: mocGameViewModel)
+            .preferredColorScheme(.light)
     }
 }

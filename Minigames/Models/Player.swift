@@ -10,11 +10,13 @@ import Foundation
 class Player: ObservableObject, Identifiable {
     var id: UUID = UUID() //may be better to use the database for this one
     var nickname: String
+    var image: URL?
     @Published var resources: [Resource]
     
-    init(_ nickname: String, _ resources: [Resource]) {
+    init(_ nickname: String, _ imageURL: URL? = nil) {
         self.nickname = nickname
-        self.resources = resources
+        self.resources = []
+        self.image = imageURL
     }
 }
 
