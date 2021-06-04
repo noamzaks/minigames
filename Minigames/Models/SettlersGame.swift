@@ -25,17 +25,15 @@ protocol SettlersGame {
     /// Make sure a purchase is valid. may be used by the UI before the user is making the purchase
     /// - Parameters:
     ///   - building: which kind of building to purchase
-    ///   - position: where to position this building
-    /// - throws: an Error of type `SettlersGameError` if the given position is not valid
+    /// - throws: an Error of type `SettlersGameError` if the building position is not valid
     /// - returns: true if the purchase is valid, false otherwise
-    func validatePurchase(of building: Building, at position: BuildingPosition) throws -> Bool
+    func validatePurchase(of building: Building) throws -> Bool
     
     /// make a purchase
     /// - Parameters:
     ///   - building: which kind of building to purchase
-    ///   - position: where to position this building
-    /// - throws: an Error of type `SettlersGameError` if the given position  or the purchase is not valid
-    func purchase(of building: Building, at position: BuildingPosition) throws
+    /// - throws: an Error of type `SettlersGameError` if the building position  or the purchase is not valid
+    func purchase(of building: Building) throws
     
     //MARK: trades
     //todo: find good names and write docs
