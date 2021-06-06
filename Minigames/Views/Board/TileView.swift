@@ -12,8 +12,10 @@ struct TileView: View {
     @EnvironmentObject var tile: Tile
     
     var body: some View {
-        background(for: tile)
-            .overlay(tag(for: tile))
+        GeometryReader { geometry in
+            background(for: tile)
+                .overlay(tag(for: tile, in: geometry.size))
+        }
     }
     
     private func background(for tile: Tile) -> AnyView{
@@ -33,37 +35,69 @@ struct TileView: View {
         }
     }
     
-    private func tag(for tile: Tile) -> some View {
-        HStack {
+    private func tag(for tile: Tile, in size: CGSize) -> some View {
+        ZStack() {
             if let diceValue = tile.diceValue {
-                VStack(alignment: .center) {
+                VStack(spacing: 0) {
+                    
                     Text("\(diceValue.value)")
-                        .font(.body)
-                    HStack {
+                        .font(.system(size: size.width * TileView.textRelativeSize))
+                    
+                    HStack(spacing: size.width * TileView.dotsRelativeSize) {
                         ForEach(0..<diceValue.probability) { _ in
-                            Text("·")
-                                .font(.caption)
+                            Circle()
+                                .frame(width: size.width * TileView.dotsRelativeSize,
+                                       height: size.height * TileView.dotsRelativeSize)
                         }
                     }
-                    .padding(.top, -10)
                 }
+                .padding()
+                .frame(width: size.height * TileView.tagRelativeSize,
+                       height: size.width * TileView.tagRelativeSize)
+                .background(Color(UIColor.systemBackground))
+                .clipShape(Circle())
             }
             
             if tile.knightIsIn {
                 Text("🥷")
-                    .font(.largeTitle)
+                    .font(.system(size: size.width * TileView.knightRelativeSize))
+                    .offset(knightOffset(for: size))
             }
         }
-        .padding()
-        .background(Color.white)
-        .clipShape(Capsule(style: .continuous))
+        
+        
     }
+    
+    func knightOffset(for size: CGSize) ->  CGSize {
+        
+        guard tile.diceValue != nil else {
+            return .zero
+        }
+        
+        let y = size.height * TileView.tagRelativeSize * 0.5
+        let x = size.width * TileView.tagRelativeSize * 0.5
+        return CGSize(width: x, height: y)
+    }
+    
+    private static var tagRelativeSize: CGFloat = 0.33
+    private static var textRelativeSize: CGFloat = 0.15
+    private static var knightRelativeSize: CGFloat = 0.23
+    private static var dotsRelativeSize: CGFloat = 0.017
+    
     
 }
 
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
-        TileView()
-            .environmentObject(Tile(terrain: .fields, dice: nil, row: 2, column: 2))
+        Group {
+            TileView()
+            
+            TileView()
+                .preferredColorScheme(.dark)
+            
+        }
+        .environmentObject(Tile(terrain: .mountains, dice: (3,3), row: 2, column: 2, knightIsIn: true))
+        .previewLayout(.fixed(width: 300, height: 300))
+        .clipShape(Hexagon())
     }
 }

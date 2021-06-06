@@ -17,6 +17,7 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     @Published var currentPlayerID: UUID? = nil
     
     @Published var tiles: [Tile] = []
+    @Published var buildings: [Building] = []
     @Published var players: [Player] = []
     @Published var gameState: SettlersGameState = SettlersGameState.waitingForPlayers(connectedPlayers: [])
     
@@ -46,6 +47,10 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
             .sink { state in
                 
             }
+            .store(in: &cancellables)
+        
+        game.buildingsPublisher
+            .assign(to: \.buildings, on: self)
             .store(in: &cancellables)
     }
     

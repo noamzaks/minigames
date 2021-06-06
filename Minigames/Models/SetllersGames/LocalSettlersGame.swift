@@ -9,6 +9,9 @@ import Foundation
 
 class LocalSettlersGame: SettlersGame {
     
+    @Published var buildings: [Building] = []
+    var buildingsPublisher: Published<[Building]>.Publisher { $buildings }
+    
     @Published var tiles: [Tile] = []
     var tilesPublisher: Published<[Tile]>.Publisher { $tiles }
     
@@ -48,13 +51,20 @@ class LocalSettlersGame: SettlersGame {
         
         tiles.append(Tile(terrain: .desert, dice: nil, row: positions.first!.row, column: positions.first!.column, knightIsIn: true))
         
+        tiles[0].knightIsIn = true
+        
+        //moc buildings:
+        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .bottom)))
+        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 2, column: 4)!, at: .topRight)))
+
+        
     }
     
-    func validatePurchase(of building: Building, at position: BuildingPosition) throws -> Bool {
+    func validatePurchase(of building: Building) throws -> Bool {
         return true
     }
     
-    func purchase(of building: Building, at position: BuildingPosition) throws {
+    func purchase(of building: Building) throws {
         
     }
     

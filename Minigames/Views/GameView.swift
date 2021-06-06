@@ -12,12 +12,19 @@ struct GameView<Game: SettlersGame>: View {
     @ObservedObject var gameVM: SettlersGameViewModel<Game>
     
     var body: some View {
-        VStack {
-            PlayersBarView(gameVM: gameVM)
-            BoardView(gameVM: gameVM)
-            ResourceBarView(player: gameVM.localPlayer)
+        ZStack {
+            Color.blue
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                PlayersBarView(gameVM: gameVM)
+                BoardView(gameVM: gameVM)
+                ResourceBarView(player: gameVM.localPlayer)
+            }
+            
+            
         }
-        .padding(.vertical)
+        
     }
 }
 

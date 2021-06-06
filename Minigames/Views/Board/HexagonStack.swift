@@ -16,7 +16,7 @@ struct HexagonStack<Item>: View where Item: View {
     /// the amount of items to fit in the top and bottom rows of the stack
     var minColumns: Int
     /// the space between hexagons sides in the stack
-    var spacing: CGFloat = 10
+    var spacing: CGFloat = 5
     
     /// row, column, itemSize
     private var viewForIndex: (Int, Int, CGFloat) -> Item
@@ -95,17 +95,13 @@ struct HexagonStack<Item>: View where Item: View {
         return spacing * sqrt(0.75) + offset
     }
     
-    private func index(at column: Int, row: Int) -> Int{
-        let middleRow = maxColumns - minColumns
-
-        if middleRow >= row {
-            return ((2 * minColumns + row ) * (row) / 2) + column
-        } else {
-            return (minColumns + maxColumns) * (maxColumns - minColumns + 1)/2 + ((2 * maxColumns - (row - middleRow) ) * (row - middleRow)/2) + column
-        }
+    func getRadius(in size: CGSize) -> CGFloat {
+        (itemSize(for: size) + spacing) / 2
     }
     
 }
+
+
 
 #if DEBUG
 struct HexagonStack_Previews: PreviewProvider {

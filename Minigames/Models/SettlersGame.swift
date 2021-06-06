@@ -12,6 +12,7 @@ protocol SettlersGame {
     var playersPublisher:               Published<[Player]>.Publisher           { get }
     var currentPlayerIDPublisher:       Published<UUID?>.Publisher              { get }
     var gameStatePublisher:             Published<SettlersGameState>.Publisher  { get }
+    var buildingsPublisher:             Published<[Building]>.Publisher         { get }
     
     var pointsToWin:        Int     { get } // how much points are nedded to win the game
     var localPlayerID:      UUID    { get }

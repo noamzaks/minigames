@@ -37,7 +37,9 @@
 		F10F31F9266A88C40090F6C8 /* TileCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31F8266A88C40090F6C8 /* TileCorner.swift */; };
 		F10F31FB266A891C0090F6C8 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FA266A891C0090F6C8 /* Building.swift */; };
 		F10F31FD266A894E0090F6C8 /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FC266A894E0090F6C8 /* Intersection.swift */; };
-		F10F31FF266A89B10090F6C8 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FE266A89B10090F6C8 /* Path.swift */; };
+		F10F31FF266A89B10090F6C8 /* RoadPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FE266A89B10090F6C8 /* RoadPath.swift */; };
+		F10F3204266B482E0090F6C8 /* BuildingsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */; };
+		F10F3206266BC74B0090F6C8 /* BuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F3205266BC74B0090F6C8 /* BuildingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +75,9 @@
 		F10F31F8266A88C40090F6C8 /* TileCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCorner.swift; sourceTree = "<group>"; };
 		F10F31FA266A891C0090F6C8 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		F10F31FC266A894E0090F6C8 /* Intersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersection.swift; sourceTree = "<group>"; };
-		F10F31FE266A89B10090F6C8 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		F10F31FE266A89B10090F6C8 /* RoadPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadPath.swift; sourceTree = "<group>"; };
+		F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuildingsModifier.swift; path = Minigames/Views/board/BuildingsModifier.swift; sourceTree = SOURCE_ROOT; };
+		F10F3205266BC74B0090F6C8 /* BuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuildingView.swift; path = Minigames/Views/board/BuildingView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +132,11 @@
 		49E8BCBD2662D11F001EF4B2 /* Board */ = {
 			isa = PBXGroup;
 			children = (
-				F10B59AD2662AFC200C1BD98 /* Hexagon.swift */,
 				F10B59B62663A48900C1BD98 /* HexagonStack.swift */,
 				F10B59D92667D45000C1BD98 /* BoardView.swift */,
 				F10B59DB2667DA3D00C1BD98 /* TileView.swift */,
+				F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */,
+				F10F3205266BC74B0090F6C8 /* BuildingView.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -207,6 +212,8 @@
 		F10B59E52668CE2500C1BD98 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				F10F320A266C13710090F6C8 /* shpaes */,
+				F10F3207266BE8320090F6C8 /* modifiers */,
 				F10B59E82668F4EF00C1BD98 /* URLImageView */,
 			);
 			path = support;
@@ -241,9 +248,24 @@
 				F10B59CE26669D2B00C1BD98 /* BoardPosition.swift */,
 				F10F31F8266A88C40090F6C8 /* TileCorner.swift */,
 				F10F31FC266A894E0090F6C8 /* Intersection.swift */,
-				F10F31FE266A89B10090F6C8 /* Path.swift */,
+				F10F31FE266A89B10090F6C8 /* RoadPath.swift */,
 			);
 			path = BoardPositions;
+			sourceTree = "<group>";
+		};
+		F10F3207266BE8320090F6C8 /* modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = modifiers;
+			sourceTree = "<group>";
+		};
+		F10F320A266C13710090F6C8 /* shpaes */ = {
+			isa = PBXGroup;
+			children = (
+				F10B59AD2662AFC200C1BD98 /* Hexagon.swift */,
+			);
+			path = shpaes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,8 +342,10 @@
 				F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */,
 				F10B59E32668CB0500C1BD98 /* PlayerView.swift in Sources */,
 				F10B59B52662B21100C1BD98 /* Resource.swift in Sources */,
-				F10F31FF266A89B10090F6C8 /* Path.swift in Sources */,
+				F10F31FF266A89B10090F6C8 /* RoadPath.swift in Sources */,
+				F10F3204266B482E0090F6C8 /* BuildingsModifier.swift in Sources */,
 				F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */,
+				F10F3206266BC74B0090F6C8 /* BuildingView.swift in Sources */,
 				F10B59EC26691AEF00C1BD98 /* PlayersBarView.swift in Sources */,
 				49649C8C26628FBF008EF8DE /* Experience.rcproject in Sources */,
 				49E8BCC02662D268001EF4B2 /* SettlersGame.swift in Sources */,

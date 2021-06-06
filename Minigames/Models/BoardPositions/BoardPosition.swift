@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BoardPosition {
-    var owner: Player? { get set }
+    
 }
