@@ -29,6 +29,6 @@ struct ResourceBarView_Previews: PreviewProvider {
             ResourceBarView(player: Player("cool"))
                 .preferredColorScheme(.dark)
         }
-        .previewLayout(.fixed(width: 500, height: 100))
+        .previewLayout(.fixed(width: 300, height: 3000))
     }
 }

@@ -11,7 +11,7 @@ struct MinigamesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            GameView(gameVM: viewModel)
+            GameView(viewModel)
         }
     }
 }

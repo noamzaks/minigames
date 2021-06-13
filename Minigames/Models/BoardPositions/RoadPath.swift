@@ -8,7 +8,7 @@
 import Foundation
 import simd
 
-class RoadPath {
+class RoadPath: BoardPosition {
     private var intersections:(Intersection, Intersection)
     
     init?(from intersection1: Intersection, to intersection2: Intersection) {

@@ -28,24 +28,7 @@ extension Intersection: Hashable, Equatable {
     // find the intersection relative position to middle tile of the board
     // assuming the radius ot the blocking circle of the hexagon is 1
     func boardPosition() -> SIMD2<Float> {
-       
-        let R: Float = 1 // changing this from 1 will cause some problems in `Path` implementation
-        let tileHeight: Float = 1.5 * R
-        let tileWidth: Float
-        if tile.row % 2 == 0 {
-            tileWidth = 2 * cos(Float.pi / 6) * R
-        } else {
-            tileWidth = cos(Float.pi / 6) * R
-        }
-            
-        
-        // find the vector from the middle to the center of the tile.
-        let mid2Tile: SIMD2<Float> = .init(x: Float(tile.column - Intersection.boardMidPosition.column) * tileWidth,
-                                           y: Float(Intersection.boardMidPosition.row - tile.row) * tileHeight)
-        
-        let tile2intersection: SIMD2<Float> = self.tileCorner.vector * R
-        
-        return tile2intersection + mid2Tile
+        tile.boardPosition() + self.tileCorner.vector
     }
     
     static func == (lhs: Intersection, rhs: Intersection) -> Bool {

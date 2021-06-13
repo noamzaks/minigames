@@ -10,20 +10,41 @@ import SwiftUI
 struct PlayersBarView<Game: SettlersGame>: View {
     
     @ObservedObject var gameVM: SettlersGameViewModel<Game>
-    
+    @Environment(\.horizontalSizeClass) var sizeClass
+
     var body: some View {
-        HStack {
-            ForEach(gameVM.players) { player in
-                PlayerView(player.id, currentPlayerID: gameVM.currentPlayerID)
-                    .environmentObject(player)
-            }
+        switch sizeClass {
+        case .compact:
+            TabView { playersViews }
+                .tabViewStyle(PageTabViewStyle())
+                .overlay(Text("\(sizeClass.debugDescription)"))
+        default:
+            HStack { playersViews }
+                .overlay(Text("\(sizeClass.debugDescription)"))
+
         }
     }
+    
+    @ViewBuilder
+    var playersViews: some View {
+        ForEach(gameVM.players) { player in
+            PlayerView(currentPlayerID: gameVM.currentPlayerID)
+                .environmentObject(player)
+        }
+    }
+    
 }
 
 struct PlayersBarView_Previews: PreviewProvider {
     static var previews: some View {
-        @ObservedObject var vm = mocGameViewModel
-        return PlayersBarView(gameVM: vm)
+        
+        Group {
+            PlayersBarView(gameVM: mocGameViewModel)
+            PlayersBarView(gameVM: mocGameViewModel)
+                .previewDevice("iPhone 12 Pro")
+            
+            PlayersBarView(gameVM: mocGameViewModel)
+                .previewDevice("iPhone 8")
+        }
     }
 }

@@ -9,6 +9,9 @@ import Foundation
 
 class LocalSettlersGame: SettlersGame {
     
+    @Published var trades: [Trade] = []
+    var tradesPublisher: Published<[Trade]>.Publisher { $trades }
+    
     @Published var buildings: [Building] = []
     var buildingsPublisher: Published<[Building]>.Publisher { $buildings }
     
@@ -68,15 +71,15 @@ class LocalSettlersGame: SettlersGame {
         
     }
     
-    func validateTrade(convert: [Resource], to: [Resource]) -> Bool {
-        return true
-    }
-    
-    func tradeWithBank(convert: [Resource], to: [Resource]) throws {
+    func tradeWithBank(give: [Resource], get: [Resource]) throws {
         
     }
     
-    func askForTrade(convert: [Resource], to: [Resource]) throws {
+    func askForTrade(give: [Resource], get: [Resource]) throws {
+        
+    }
+    
+    func acceptTrade(id tradeID: UUID) throws {
         
     }
     

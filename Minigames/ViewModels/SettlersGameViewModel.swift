@@ -7,11 +7,11 @@
 
 import Foundation
 import Combine
+import UIKit.UIColor
 
 class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     
-    private var game: Game
-    private var cancellables: Array<AnyCancellable> = .init()
+    @Published private var game: Game
     
     @Published var localPlayerIsPlaying: Bool = false
     @Published var currentPlayerID: UUID? = nil
@@ -19,8 +19,13 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     @Published var tiles: [Tile] = []
     @Published var buildings: [Building] = []
     @Published var players: [Player] = []
+    @Published var trades: [Trade] = []
+    
     @Published var gameState: SettlersGameState = SettlersGameState.waitingForPlayers(connectedPlayers: [])
     
+    private var colors: [UUID: UIColor] = [:]
+    
+    private var cancellables: Array<AnyCancellable> = .init()
     
     init(_ player: Player) {
         self.game = Game(joinAs: player)
@@ -34,13 +39,18 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
             .assign(to: \.currentPlayerID, on: self)
             .store(in: &cancellables)
 
-        
         game.tilesPublisher
             .assign(to: \.tiles, on: self)
             .store(in: &cancellables)
         
         game.playersPublisher
             .assign(to: \.players, on: self)
+            .store(in: &cancellables)
+        
+        game.tradesPublisher
+            .sink {
+                self.trades = $0.filter({$0.bidderID != self.game.localPlayerID })
+            }
             .store(in: &cancellables)
         
         game.gameStatePublisher
@@ -65,6 +75,16 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     //MARK: Intents
     public func rollDice(){
         let _ = game.rollDice()
+    }
+    
+    //MARK: UI support
+    
+    func color(for player: Player) -> UIColor {
+        color(for: player.id)
+    }
+    
+    func color(for playerID: UUID) -> UIColor {
+        self.colors[playerID] ?? UIColor.clear
     }
 }
 

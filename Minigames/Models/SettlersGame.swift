@@ -13,6 +13,7 @@ protocol SettlersGame {
     var currentPlayerIDPublisher:       Published<UUID?>.Publisher              { get }
     var gameStatePublisher:             Published<SettlersGameState>.Publisher  { get }
     var buildingsPublisher:             Published<[Building]>.Publisher         { get }
+    var tradesPublisher:                Published<[Trade]>.Publisher            { get }
     
     var pointsToWin:        Int     { get } // how much points are nedded to win the game
     var localPlayerID:      UUID    { get }
@@ -38,11 +39,12 @@ protocol SettlersGame {
     
     //MARK: trades
     //todo: find good names and write docs
-    func validateTrade(convert: [Resource], to: [Resource]) -> Bool
+
+    func acceptTrade(id tradeID: UUID) throws
     
-    func tradeWithBank(convert: [Resource], to: [Resource]) throws
+    func tradeWithBank(give: [Resource], get: [Resource]) throws
         
-    func askForTrade(convert: [Resource], to: [Resource]) throws
+    func askForTrade(give: [Resource], get: [Resource]) throws
     
     /// place a knight on a tile
     /// - Parameters:

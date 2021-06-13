@@ -9,43 +9,49 @@ import SwiftUI
 
 struct BoardView<Game: SettlersGame>: View {
     
-    @ObservedObject var gameVM: SettlersGameViewModel<Game>
-        
+    @ObservedObject var boardVM: BoardViewModel<Game>
+    
     var body: some View {
-        HexagonStack(viewForIndex: tileView)
-        .buildingsOverlay(for: gameVM.buildings) { building, radius in
-            BuildingView(building: building, tileRadius: radius)
-        }
-        .padding()
+        HexagonStack(boardVM, viewForIndex: tileView)
+            .buildingsOverlay(for: boardVM.gameVM.buildings) { building, radius in
+                BuildingView(building: building, tileRadius: radius)
+            }
+            .padding()
     }
     
     private func tileView(row: Int, column: Int, size: CGFloat) -> some View {
-        Group {
-            if let tile = TileAt(row, column){
-                TileView().environmentObject(tile)
-            } else {
-                Text("error")
+        GeometryReader { geometry in
+            Group {
+                if let tile = boardVM.tileAt(row, column){
+                    TileView()
+                        .environmentObject(tile)
+                        .frame(width: size, height: size)
+                        .clipShape(Hexagon())
+                        .shadow(color: tileShadow(for: tile), radius: 20)
+                } else {
+                    Text("error")
+                }
             }
         }
-        .frame(width: size, height: size)
-        .clipShape(Hexagon())
+        
     }
     
-    private func TileAt(_ row: Int, _ column: Int) -> Tile? {
-        gameVM.tiles.first { $0.row == row && $0.column == column }
+    private func tileShadow(for tile: Tile) -> Color {
+        if tile == boardVM.knightHoveringTile {
+            return tile.knightIsIn ? .red : .green
+        } else {
+            return .clear
+        }
     }
-    
-    
     
 }
 
 struct BoardView_Previews: PreviewProvider {
     
-    
     static var previews: some View {
-        @ObservedObject var vm = mocGameViewModel
+        @ObservedObject var vm = BoardViewModel(gameVM: mocGameViewModel)
         
-        return BoardView(gameVM: vm)
+        return BoardView(boardVM: vm)
             .previewLayout(.fixed(width: 1000, height: 1000))
     }
 }

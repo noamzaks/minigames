@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BoardPosition {
-    
+    func boardPosition() -> SIMD2<Float>
 }

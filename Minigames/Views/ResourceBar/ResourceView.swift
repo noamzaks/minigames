@@ -28,7 +28,7 @@ struct ResourceView: View {
     }
 }
 
-fileprivate extension Resource {
+extension Resource {
     var icon: String {
         switch self {
         case .lumber:   return "🪵"

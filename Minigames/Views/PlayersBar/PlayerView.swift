@@ -12,10 +12,8 @@ struct PlayerView: View {
     @EnvironmentObject var player: Player
     var currentPlayerID: UUID?
     
-    var playerID: UUID
     
-    init(_ playerID: UUID, currentPlayerID: UUID?) {
-        self.playerID = playerID
+    init(currentPlayerID: UUID?) {
         self.currentPlayerID = currentPlayerID
         
     }
@@ -42,7 +40,7 @@ struct PlayerView: View {
     }
     
     var borderColor: Color {
-        if playerID == currentPlayerID {
+        if player.id == currentPlayerID {
             return Color.green
         } else {
             return Color.clear
@@ -53,16 +51,18 @@ struct PlayerView: View {
 }
 
 
-//struct PlayerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            PlayerView(0, currentPlayerIndex: 0)
-//
-//            PlayerView(0, currentPlayerIndex: 1)
-//                .preferredColorScheme(.dark)
-//        }
-//        .environmentObject(Player("Tomer Israeli", URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_j2VT552ZfuskH0mW56BCIONHRhyFhpGUUw&usqp=CAU")))
-//
-//        .previewLayout(.fixed(width: 300, height: 300))
-//    }
-//}
+struct PlayerView_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        let p = Player("Tomer Israeli", URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_j2VT552ZfuskH0mW56BCIONHRhyFhpGUUw&usqp=CAU"))
+        
+        return Group {
+            PlayerView(currentPlayerID: nil)
+
+            PlayerView(currentPlayerID: nil)
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(p)
+        .previewLayout(.fixed(width: 300, height: 300))
+    }
+}

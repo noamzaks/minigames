@@ -40,11 +40,10 @@ extension HexagonStack {
     func buildingsOverlay<BuildingView: View> (for buildings: [Building],
                                                viewForBuilding: @escaping (Building, Float) -> BuildingView) -> some View {
         
-        GeometryReader { geometry in
-            self.modifier(BuildingsOverlayModifier(buildings: buildings,
-                                                   viewForBuilding: viewForBuilding,
-                                                   hexagonRadius: Float(self.getRadius(in: geometry.size))))
-        }
+        self.modifier(BuildingsOverlayModifier(buildings: buildings,
+                                               viewForBuilding: viewForBuilding,
+                                               hexagonRadius: Float(self.viewModel.itemSize/2)))
+        
         
     }
     

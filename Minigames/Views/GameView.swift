@@ -10,27 +10,72 @@ import SwiftUI
 struct GameView<Game: SettlersGame>: View {
     
     @ObservedObject var gameVM: SettlersGameViewModel<Game>
+    @ObservedObject var boardVM: BoardViewModel<Game>
+    
+    @State private var showSecodary: Bool = false
+    
+    init(_ gameVM: SettlersGameViewModel<Game>) {
+        self.boardVM = BoardViewModel(gameVM: gameVM)
+        self.gameVM = gameVM
+    }
     
     var body: some View {
-        ZStack {
-            Color.blue
-                .edgesIgnoringSafeArea(.all)
-            
+        mainView
+            .edgesIgnoringSafeArea(.all)
+        
+    }
+    
+    private var mainView: some View {
+        ZStack(alignment: .bottom) {
+
             VStack {
-                PlayersBarView(gameVM: gameVM)
-                BoardView(gameVM: gameVM)
-                ResourceBarView(player: gameVM.localPlayer)
+                
+                HStack {
+                
+                PlayerView(currentPlayerID: gameVM.currentPlayerID)
+                    .environmentObject(gameVM.localPlayer)
+                    
+                    Spacer()
+                }
+                
+                BoardView(boardVM: boardVM)
+                
+                
+                HStack(alignment: .bottom) {
+                    
+                    
+                    ResourceBarView(player: gameVM.localPlayer)
+                    
+                    Text("🥷")
+                        .font(.largeTitle)
+                        .frame(width: 40, height: 40)
+                        .draggableGamePiece(boardVM)
+                }
+                
+                
             }
             
             
         }
+        .padding()
+        
         
     }
+    
+    private var tradesView: some View {
+        Text("secondary")
+            .edgesIgnoringSafeArea(.all)
+            .background(Color.red)
+    }
+    
+    
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(gameVM: mocGameViewModel)
-            .preferredColorScheme(.light)
+        Group {
+            GameView(mocGameViewModel)
+                .preferredColorScheme(.light)
+        }
     }
 }
