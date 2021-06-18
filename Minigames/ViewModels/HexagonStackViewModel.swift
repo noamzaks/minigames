@@ -9,6 +9,8 @@ import SwiftUI
 
 class HexagonStackViewModel {
     
+    var coordianteSpace: String = "hexagonsStack"
+    
     var dimensions: (frame: CGRect, spacing: CGFloat, maxColumns: Int, minColumn: Int)? {
         didSet {
             guard let d = self.dimensions else { return }

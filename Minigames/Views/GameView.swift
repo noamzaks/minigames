@@ -46,19 +46,19 @@ struct GameView<Game: SettlersGame>: View {
                     
                     ResourceBarView(player: gameVM.localPlayer)
                     
-                    Text("🥷")
-                        .font(.largeTitle)
-                        .frame(width: 40, height: 40)
-                        .draggableGamePiece(boardVM)
+                    DraggableRobberView(boardVM: self.boardVM)
                 }
                 
                 
             }
             
+//            Circle()
+//                .frame(width: 30, height: 30)
+//                .position(boardVM.knightPosition)
+            
             
         }
         .padding()
-        
         
     }
     

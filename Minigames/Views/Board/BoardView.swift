@@ -19,21 +19,19 @@ struct BoardView<Game: SettlersGame>: View {
             .padding()
     }
     
+    @ViewBuilder
     private func tileView(row: Int, column: Int, size: CGFloat) -> some View {
-        GeometryReader { geometry in
-            Group {
-                if let tile = boardVM.tileAt(row, column){
-                    TileView()
-                        .environmentObject(tile)
-                        .frame(width: size, height: size)
-                        .clipShape(Hexagon())
-                        .shadow(color: tileShadow(for: tile), radius: 20)
-                } else {
-                    Text("error")
-                }
-            }
+        if let tile = boardVM.tileAt(row, column){
+            TileView<Game>(tile)
+                .environmentObject(boardVM)
+                .frame(width: size, height: size)
+                .clipShape(Hexagon())
+                .shadow(color: tileShadow(for: tile), radius: 20)
+            
+        } else {
+            Image(systemName: "exclamationmark.triangle")
+            
         }
-        
     }
     
     private func tileShadow(for tile: Tile) -> Color {

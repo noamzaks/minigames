@@ -36,16 +36,17 @@ struct HexagonStack<Item>: View where Item: View {
                 .position(x: geometry.frame(in: .local).midX,
                           y: geometry.frame(in: .local).midY)
         }
+//        .coordinateSpace(name: viewModel.coordianteSpace)
+
     }
     
     private func body(for geometry: GeometryProxy) -> some View{
         viewModel.dimensions = (geometry.frame(in: .global), spacing, maxColumns, minColumns)
-        
-//        let viewModel: (horizontalOffset: CGFloat,
+
+        //        let viewModel: (horizontalOffset: CGFloat,
 //                        verticalOffset: CGFloat,
 //                        itemSize: CGFloat) = (1, 1, 30)
         
-        print("size: \(viewModel.horizontalOffset)")
         var numberOfColumnsByRow = Array((minColumns...maxColumns))
         numberOfColumnsByRow.append(contentsOf: Array(minColumns...maxColumns-1).reversed())
         

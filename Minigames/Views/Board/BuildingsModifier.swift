@@ -23,7 +23,6 @@ struct BuildingsOverlayModifier<BuildingView>: ViewModifier where BuildingView: 
                     .offset(offset(for: building))
             }
         }
-        
     }
     
     private func offset(for building: Building) -> CGSize {
@@ -37,25 +36,11 @@ struct BuildingsOverlayModifier<BuildingView>: ViewModifier where BuildingView: 
 
 extension HexagonStack {
     
-    func buildingsOverlay<BuildingView: View> (for buildings: [Building],
-                                               viewForBuilding: @escaping (Building, Float) -> BuildingView) -> some View {
+    func buildingsOverlay<BuildingView: View> (for buildings: [Building],viewForBuilding: @escaping (Building, Float) -> BuildingView) -> some View {
         
         self.modifier(BuildingsOverlayModifier(buildings: buildings,
                                                viewForBuilding: viewForBuilding,
-                                               hexagonRadius: Float(self.viewModel.itemSize/2)))
-        
-        
+                                               hexagonRadius: self.viewModel.radius))
     }
     
-    
-}
-
-extension SIMD2 where Scalar == Float {
-    var asCGSize: CGSize {
-        .init(width: Double(self.x), height: Double(self.y))
-    }
-    
-    public mutating func reverseY() {
-        self.y *= -1
-    }
 }

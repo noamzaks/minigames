@@ -20,19 +20,20 @@ class Tile: ObservableObject, BoardPosition, Equatable {
         
         let R: Float = 1 // changing this from 1 will cause some problems in the game implementation
         let tileHeight: Float = 1.5 * R
-        let tileWidth: Float
-        if self.row % 2 == 0 {
-            tileWidth = 2 * cos(Float.pi / 6) * R
-        } else {
-            tileWidth = cos(Float.pi / 6) * R
-        }
-        
+        let tileWidth: Float = 2 * cos(Float.pi / 6) * R
         
         // find the vector from the middle to the center of the tile.
-        return .init(x: Float(self.column - Intersection.boardMidPosition.column) * tileWidth,
-                     y: Float(Intersection.boardMidPosition.row - self.row) * tileHeight)
+        return .init(x: (Float(self.column) - self.midColumn(row: row)) * tileWidth,
+                     y: Float(self.midRow - self.row) * tileHeight)
         
     }
+    
+    private func midColumn(row: Int) -> Float{
+        let dRow: Float = .init(abs(row - self.midRow))
+        return Float(self.midColumn) - dRow * 0.5
+    }
+    
+    public var gridPosition: (row: Int, column: Int) { (row, column) }
     
     static func == (lhs: Tile, rhs: Tile) -> Bool {
         lhs.row == rhs.row && lhs.column == rhs.column

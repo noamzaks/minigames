@@ -20,7 +20,6 @@ class Intersection: BoardPosition {
         self.isHarbor = isHarbor
     }
     
-    static var boardMidPosition: (row: Int, column: Int) = (2,2)
 }
 
 extension Intersection: Hashable, Equatable {

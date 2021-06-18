@@ -57,8 +57,8 @@ class LocalSettlersGame: SettlersGame {
         tiles[0].knightIsIn = true
         
         //moc buildings:
-        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .bottom)))
-        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 2, column: 4)!, at: .topRight)))
+        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .topRight)))
+        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 4, column: 0)!, at: .topRight)))
 
         
     }

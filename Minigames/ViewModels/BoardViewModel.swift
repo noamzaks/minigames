@@ -13,8 +13,13 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel, ObservableObjec
     
     @Published var gameVM: SettlersGameViewModel<Game>
     
-    @Published var knightPosition: CGPoint = .zero
-    @Published var knightHoveringTile: (row: Int, column: Int)?
+    @Published var knightLocation: CGPoint = .zero
+    var knightHoveringTile: (row: Int, column: Int)?
+    var knightHoldingTime: Double = 0
+    var knightPositionIsValid: Bool {
+        guard let pos = knightHoveringTile else { return false }
+        return !(tileAt(pos.row, pos.column)?.knightIsIn ?? true)
+    }
     
     private var cancellables: [AnyCancellable] = []
     
@@ -22,10 +27,11 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel, ObservableObjec
         self.gameVM = gameVM
         super.init()
         
-        $knightPosition
-            .map { self.closestTile(to: $0) }
+        $knightLocation
+            .map { self.closestTile(to: $0)?.gridPosition }
             .assign(to: \.knightHoveringTile, on: self)
             .store(in: &cancellables)
+        
     }
     
     func tileAt(_ row: Int, _ column: Int) -> Tile? {
@@ -33,22 +39,25 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel, ObservableObjec
     }
     
     //MARK: game piece drops
-    
-    private func closestTile(to point: CGPoint) -> (row: Int, column: Int)? {
+    private func closestTile(to point: CGPoint) -> Tile? {
         // find closest tile
-        guard let frame = self.dimensions?.frame else { return nil }
+        guard
+            let frame = self.dimensions?.frame,
+            frame.contains(point)
+        else { return nil }
+        
         let dragBoardPosition: SIMD2<Float> = .init(x: Float(point.x - frame.midX), y: Float(frame.midY - point.y)) / self.radius
         
-        let tile = self.gameVM.tiles
-            .sorted {
-                distance($0.boardPosition(), dragBoardPosition) < distance($1.boardPosition(), dragBoardPosition)
-            }.first!
+        return self.gameVM.tiles
+            .sorted { distance($0.boardPosition(), dragBoardPosition) < distance($1.boardPosition(), dragBoardPosition) }
+            .filter { distance($0.boardPosition(), dragBoardPosition) < self.radius }
+            .first
+    }
+    
+    public func placeKnight(at location: CGPoint) {
+        guard let tile = closestTile(to: location) else { return }
         
-        if distance(tile.boardPosition(), dragBoardPosition) < self.radius * 0.6 {
-            return (tile.row, tile.column)
-        } else {
-            return nil
-        }
+        
     }
     
 }
