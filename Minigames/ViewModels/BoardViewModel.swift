@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import simd
 
-class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel, ObservableObject {
+class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel {
     
     @Published var gameVM: SettlersGameViewModel<Game>
     
@@ -36,6 +36,10 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel, ObservableObjec
     
     func tileAt(_ row: Int, _ column: Int) -> Tile? {
         gameVM.tiles.first { $0.row == row && $0.column == column }
+    }
+    
+    var buildings: [Building] {
+        gameVM.buildings
     }
     
     //MARK: game piece drops

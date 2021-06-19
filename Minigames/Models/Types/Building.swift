@@ -1,21 +1,21 @@
 import Foundation
 
 enum Building{
-    case city(intersection: Intersection)
-    case settelment(intersection: Intersection)
-    case road(path: RoadPath)
-    
+    case city(intersection: Intersection,       owner: Player)
+    case settelment(intersection: Intersection, owner: Player)
+    case road(path: RoadPath,                   owner: Player)
+        
     var position: SIMD2<Float> {
         switch self {
-        case .city(let intersection), .settelment(let intersection):    return intersection.boardPosition()
-        case .road(let roadPath):                                       return roadPath.boardPosition()
+        case .city(let intersection, _), .settelment(let intersection, _):  return intersection.boardPosition()
+        case .road(let roadPath, _):                                        return roadPath.boardPosition()
         }
     }
     
     var angle: Double {
         switch self {
-        case .city(_), .settelment(_):  return 0
-        case .road(let roadPath):       return Double(roadPath.angleRelativeToX)
+        case .city(_, _), .settelment(_, _):  return 0
+        case .road(let roadPath, _):          return Double(roadPath.angle)
         }
     }
 }

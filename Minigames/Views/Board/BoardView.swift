@@ -12,11 +12,25 @@ struct BoardView<Game: SettlersGame>: View {
     @ObservedObject var boardVM: BoardViewModel<Game>
     
     var body: some View {
-        HexagonStack(boardVM, viewForIndex: tileView)
-            .buildingsOverlay(for: boardVM.gameVM.buildings) { building, radius in
-                BuildingView(building: building, tileRadius: radius)
-            }
-            .padding()
+        HexagonStack(boardVM) { row, column, size in
+            tileView(row: row, column: column, size: size)
+        }
+        .buildingsOverlay(boardVM){ building in
+            buildingView(for: building)
+        }
+        .padding()
+    }
+    
+    @ViewBuilder
+    private func buildingView(for building: Building) -> some View {
+        switch building {
+        case .city(_, let owner):
+            CityView<Game>(for: owner)
+        case .settelment(_, let owner):
+            SettlementView<Game>(for: owner)
+        case .road(_, let owner):
+            RoadView<Game>(for: owner)
+        }
     }
     
     @ViewBuilder
@@ -47,9 +61,15 @@ struct BoardView<Game: SettlersGame>: View {
 struct BoardView_Previews: PreviewProvider {
     
     static var previews: some View {
-        @ObservedObject var vm = BoardViewModel(gameVM: mocGameViewModel)
+        let vm = BoardViewModel(gameVM: mocGameViewModel)
         
-        return BoardView(boardVM: vm)
-            .previewLayout(.fixed(width: 1000, height: 1000))
+        return Group {
+            BoardView(boardVM: vm)
+                .previewLayout(.fixed(width: 1000, height: 1000))
+            
+            BoardView(boardVM: vm)
+                .preferredColorScheme(.dark)
+                .previewLayout(.fixed(width: 1000, height: 1000))
+        }
     }
 }

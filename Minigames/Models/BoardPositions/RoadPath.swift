@@ -8,27 +8,25 @@
 import Foundation
 import simd
 
-class RoadPath: BoardPosition {    
-    private var intersections:(Intersection, Intersection)
+class RoadPath: BoardPosition {
     
-    init?(from intersection1: Intersection, to intersection2: Intersection) {
-        // if the distance between the intersections is no 1 there isnt a single path between them
-        guard length(intersection1.boardPosition()-intersection2.boardPosition()) == 1 else { return nil }
-        intersections = (intersection1, intersection2)
+    private var tileSide: TileSide
+    private var tile: Tile
+    
+    init(on tile: Tile, at tileSide: TileSide) {
+        self.tileSide = tileSide
+        self.tile = tile
     }
     
-    var angleRelativeToX: Float {
-        let vetcor = intersections.0.boardPosition() - intersections.1.boardPosition()
-        let xAxes: SIMD2<Float> = .init(1, 0)
-        return acos(simd_dot(vetcor, xAxes) / length(vetcor))
-    }
+    var angle: Double { Double.pi/2 - self.tileSide.angleRelativeToXAxes }
+
 }
 
 extension RoadPath: Hashable, Equatable {
     
     // find the path center relative to the middle tile of the board
     func boardPosition() -> SIMD2<Float>{
-        (intersections.0.boardPosition() + intersections.1.boardPosition()) / 2
+        tile.boardPosition() + tileSide.vector
     }
     
     static func == (lhs: RoadPath, rhs: RoadPath) -> Bool {

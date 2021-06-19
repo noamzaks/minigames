@@ -37,7 +37,7 @@ struct DraggableGamePieceModifier: ViewModifier {
                 onEnded()
                 withAnimation {
                     self.dragAmount = .zero
-                    self.location = data.location
+                    self.location = data.startLocation
                 }
             }
     }

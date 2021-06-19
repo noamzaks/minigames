@@ -54,7 +54,7 @@ struct PlayerView: View {
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let p = Player("Tomer Israeli", URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_j2VT552ZfuskH0mW56BCIONHRhyFhpGUUw&usqp=CAU"))
+        let p = Player("Tomer Israeli", .red,  URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_j2VT552ZfuskH0mW56BCIONHRhyFhpGUUw&usqp=CAU"))
         
         return Group {
             PlayerView(currentPlayerID: nil)

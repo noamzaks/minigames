@@ -9,7 +9,7 @@ import Foundation
 
 protocol BoardPosition {
     func boardPosition() -> SIMD2<Float>
-    
+        
     var midRow: Int { get }
     var midColumn: Int { get }
 }

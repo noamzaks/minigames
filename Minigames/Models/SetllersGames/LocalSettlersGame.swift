@@ -57,9 +57,19 @@ class LocalSettlersGame: SettlersGame {
         tiles[0].knightIsIn = true
         
         //moc buildings:
-        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .topRight)))
-        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 4, column: 0)!, at: .topRight)))
-
+        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .topRight), owner: player))
+        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 1, column: 1)!, at: .top), owner: player))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 1, column: 1)!, at: .topRight), owner: player))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 1, column: 1)!, at: .right), owner: player))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 2)!, at: .topLeft), owner: player))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 2)!, at: .left), owner: player))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 2)!, at: .topRight), owner: player))
+        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 3, column: 1)!, at: .top), owner: player))
+        
+        self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 4, column: 2)!, at: .top), owner: players[1]))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 3, column: 2)!, at: .right), owner: players[1]))
+        self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 2, column: 4)!, at: .top), owner: players[1]))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 4)!, at: .topRight), owner: players[1]))
         
     }
     

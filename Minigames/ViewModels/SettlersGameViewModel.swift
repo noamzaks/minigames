@@ -90,6 +90,6 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
 
 #if DEBUG
 
-let mocGameViewModel = SettlersGameViewModel<LocalSettlersGame>(Player("tomer", URL(string: "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/07/bird-eagle-flight.jpg?h=5bbcce53&itok=wIQc9zhg")))
+let mocGameViewModel = SettlersGameViewModel<LocalSettlersGame>(Player("tomer",.blue, URL(string: "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/07/bird-eagle-flight.jpg?h=5bbcce53&itok=wIQc9zhg")))
 
 #endif

@@ -39,7 +39,6 @@
 		F10F31FD266A894E0090F6C8 /* Intersection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FC266A894E0090F6C8 /* Intersection.swift */; };
 		F10F31FF266A89B10090F6C8 /* RoadPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F31FE266A89B10090F6C8 /* RoadPath.swift */; };
 		F10F3204266B482E0090F6C8 /* BuildingsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */; };
-		F10F3206266BC74B0090F6C8 /* BuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F3205266BC74B0090F6C8 /* BuildingView.swift */; };
 		F145BFF1266D59170063519F /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF0266D59170063519F /* VerticalTabView.swift */; };
 		F145BFF62670EAEC0063519F /* ActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF52670EAEC0063519F /* ActionBarView.swift */; };
 		F145BFF82670ED930063519F /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF72670ED930063519F /* DiceView.swift */; };
@@ -50,6 +49,10 @@
 		F170E5F0267C8F1200713CCE /* DraggableRobberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5EF267C8F1200713CCE /* DraggableRobberView.swift */; };
 		F170E5F2267C8F5500713CCE /* RobberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5F1267C8F5500713CCE /* RobberView.swift */; };
 		F170E5F6267CF5A400713CCE /* SIMD2+CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5F5267CF5A400713CCE /* SIMD2+CGSize.swift */; };
+		F170E5F8267CF8D900713CCE /* TileSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5F7267CF8D900713CCE /* TileSide.swift */; };
+		F170E5FB267E57C400713CCE /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5FA267E57C400713CCE /* RoadView.swift */; };
+		F170E5FF267E584A00713CCE /* SettlementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E5FE267E584A00713CCE /* SettlementView.swift */; };
+		F170E602267E589C00713CCE /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E601267E589C00713CCE /* CityView.swift */; };
 		F19B6B5026764CF600FEAB58 /* HexagonStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */; };
 		F19B786F267936690049673B /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B786E267936690049673B /* Pie.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +92,6 @@
 		F10F31FC266A894E0090F6C8 /* Intersection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intersection.swift; sourceTree = "<group>"; };
 		F10F31FE266A89B10090F6C8 /* RoadPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadPath.swift; sourceTree = "<group>"; };
 		F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuildingsModifier.swift; path = Minigames/Views/board/BuildingsModifier.swift; sourceTree = SOURCE_ROOT; };
-		F10F3205266BC74B0090F6C8 /* BuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuildingView.swift; path = Minigames/Views/GamePieces/BuildingView.swift; sourceTree = SOURCE_ROOT; };
 		F145BFF0266D59170063519F /* VerticalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTabView.swift; sourceTree = "<group>"; };
 		F145BFF52670EAEC0063519F /* ActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBarView.swift; sourceTree = "<group>"; };
 		F145BFF72670ED930063519F /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,10 @@
 		F170E5EF267C8F1200713CCE /* DraggableRobberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableRobberView.swift; sourceTree = "<group>"; };
 		F170E5F1267C8F5500713CCE /* RobberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobberView.swift; sourceTree = "<group>"; };
 		F170E5F5267CF5A400713CCE /* SIMD2+CGSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SIMD2+CGSize.swift"; sourceTree = "<group>"; };
+		F170E5F7267CF8D900713CCE /* TileSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSide.swift; sourceTree = "<group>"; };
+		F170E5FA267E57C400713CCE /* RoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
+		F170E5FE267E584A00713CCE /* SettlementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlementView.swift; sourceTree = "<group>"; };
+		F170E601267E589C00713CCE /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
 		F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonStackViewModel.swift; sourceTree = "<group>"; };
 		F19B786E267936690049673B /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +285,7 @@
 				F10F31F8266A88C40090F6C8 /* TileCorner.swift */,
 				F10F31FC266A894E0090F6C8 /* Intersection.swift */,
 				F10F31FE266A89B10090F6C8 /* RoadPath.swift */,
+				F170E5F7267CF8D900713CCE /* TileSide.swift */,
 			);
 			path = BoardPositions;
 			sourceTree = "<group>";
@@ -303,8 +310,10 @@
 		F170E5EE267C8EEF00713CCE /* GamePieces */ = {
 			isa = PBXGroup;
 			children = (
+				F170E600267E586500713CCE /* City */,
+				F170E5FD267E583600713CCE /* Settlement */,
+				F170E5F9267D357F00713CCE /* Road */,
 				F145C0002674AA050063519F /* DraggableGamePieceModifier.swift */,
-				F10F3205266BC74B0090F6C8 /* BuildingView.swift */,
 				F170E5F4267C91B100713CCE /* Tile */,
 				F170E5F3267C90F700713CCE /* Robber */,
 			);
@@ -326,6 +335,30 @@
 				F10B59DB2667DA3D00C1BD98 /* TileView.swift */,
 			);
 			path = Tile;
+			sourceTree = "<group>";
+		};
+		F170E5F9267D357F00713CCE /* Road */ = {
+			isa = PBXGroup;
+			children = (
+				F170E5FA267E57C400713CCE /* RoadView.swift */,
+			);
+			path = Road;
+			sourceTree = "<group>";
+		};
+		F170E5FD267E583600713CCE /* Settlement */ = {
+			isa = PBXGroup;
+			children = (
+				F170E5FE267E584A00713CCE /* SettlementView.swift */,
+			);
+			path = Settlement;
+			sourceTree = "<group>";
+		};
+		F170E600267E586500713CCE /* City */ = {
+			isa = PBXGroup;
+			children = (
+				F170E601267E589C00713CCE /* CityView.swift */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,12 +434,12 @@
 				49649C8A26628FBF008EF8DE /* SettlersGameApp.swift in Sources */,
 				F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */,
 				F10B59E32668CB0500C1BD98 /* PlayerView.swift in Sources */,
+				F170E5F8267CF8D900713CCE /* TileSide.swift in Sources */,
 				F145BFFF267489030063519F /* BoardViewModel.swift in Sources */,
 				F10B59B52662B21100C1BD98 /* Resource.swift in Sources */,
 				F10F31FF266A89B10090F6C8 /* RoadPath.swift in Sources */,
 				F10F3204266B482E0090F6C8 /* BuildingsModifier.swift in Sources */,
 				F10B59C92665595900C1BD98 /* Array+Tile.swift in Sources */,
-				F10F3206266BC74B0090F6C8 /* BuildingView.swift in Sources */,
 				F19B786F267936690049673B /* Pie.swift in Sources */,
 				F10B59EC26691AEF00C1BD98 /* PlayersBarView.swift in Sources */,
 				F145BFF62670EAEC0063519F /* ActionBarView.swift in Sources */,
@@ -425,10 +458,12 @@
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
 				F10B59E12668C9EE00C1BD98 /* ResourceBarView.swift in Sources */,
 				F145C0012674AA050063519F /* DraggableGamePieceModifier.swift in Sources */,
+				F170E5FF267E584A00713CCE /* SettlementView.swift in Sources */,
 				F10B59EA2668F50D00C1BD98 /* ImageLoader.swift in Sources */,
 				F10B59D82667BC1E00C1BD98 /* LocalSettlersGame.swift in Sources */,
 				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */,
+				F170E602267E589C00713CCE /* CityView.swift in Sources */,
 				F10F31FB266A891C0090F6C8 /* Building.swift in Sources */,
 				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
 				F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */,
@@ -439,6 +474,7 @@
 				F10B59D52667BB7600C1BD98 /* GameView.swift in Sources */,
 				F10B59C7266557EB00C1BD98 /* Terrain.swift in Sources */,
 				F170E5F6267CF5A400713CCE /* SIMD2+CGSize.swift in Sources */,
+				F170E5FB267E57C400713CCE /* RoadView.swift in Sources */,
 				F10B59E72668CE4000C1BD98 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

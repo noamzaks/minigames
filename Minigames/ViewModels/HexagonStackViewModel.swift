@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-class HexagonStackViewModel {
-    
-    var coordianteSpace: String = "hexagonsStack"
-    
+class HexagonStackViewModel: ObservableObject {
+        
     var dimensions: (frame: CGRect, spacing: CGFloat, maxColumns: Int, minColumn: Int)? {
         didSet {
-            guard let d = self.dimensions else { return }
+            guard let d = self.dimensions, d.frame.size != oldValue?.frame.size else { return }
             
             self.updateDimensions(in: d.frame,
                                   spacing: d.spacing,
@@ -61,6 +59,9 @@ class HexagonStackViewModel {
         self.horizontalOffset = spacing - (itemSize * (1 - cos(CGFloat.pi / 6)))
         
         self.verticalOffset = spacing * sqrt(0.75) + (-0.25 * itemSize)
+        
+        self.objectWillChange.send()
+        
     }
  
     var radius: Float {

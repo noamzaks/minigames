@@ -7,26 +7,28 @@
 
 import SwiftUI
 
-struct BuildingsOverlayModifier<BuildingView>: ViewModifier where BuildingView: View{
+struct BuildingsOverlayModifier<BuildingView, Game>: ViewModifier where BuildingView: View, Game: SettlersGame{
     
-    var buildings: [Building]
-    var viewForBuilding: (Building, Float) -> BuildingView
-    var hexagonRadius: Float
+    @ObservedObject var boardVM: BoardViewModel<Game>
+    var viewForBuilding: (Building) -> BuildingView
     
     func body(content: Content) -> some View {
         ZStack {
             content
             
-            ForEach(buildings, id: \.self) { building in
-                viewForBuilding(building, hexagonRadius)
+            ForEach(boardVM.buildings, id: \.self) { building in
+                viewForBuilding(building)
+                    .frame(width: CGFloat(boardVM.radius), height: CGFloat( boardVM.radius))
                     .rotationEffect(.radians(building.angle))
                     .offset(offset(for: building))
+                   
             }
+            .environmentObject(boardVM)
         }
     }
     
     private func offset(for building: Building) -> CGSize {
-        var position = building.position * hexagonRadius
+        var position = building.position * boardVM.radius
         // the building position is in a coordinate system where y axes is pointed up, unlike the screen coordinate system.
         position.reverseY()
         return position.asCGSize
@@ -36,11 +38,9 @@ struct BuildingsOverlayModifier<BuildingView>: ViewModifier where BuildingView: 
 
 extension HexagonStack {
     
-    func buildingsOverlay<BuildingView: View> (for buildings: [Building],viewForBuilding: @escaping (Building, Float) -> BuildingView) -> some View {
+    func buildingsOverlay<BuildingView: View, Game: SettlersGame> (_ boardVM: BoardViewModel<Game>, viewForBuilding: @escaping (Building) -> BuildingView) -> some View {
         
-        self.modifier(BuildingsOverlayModifier(buildings: buildings,
-                                               viewForBuilding: viewForBuilding,
-                                               hexagonRadius: self.viewModel.radius))
+        self.modifier(BuildingsOverlayModifier(boardVM: boardVM, viewForBuilding: viewForBuilding))
+        
     }
-    
 }

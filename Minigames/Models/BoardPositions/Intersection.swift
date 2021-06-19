@@ -8,8 +8,6 @@
 import Foundation
 
 class Intersection: BoardPosition {
-    var owner: Player?
-    
     var tile: Tile
     var tileCorner: TileCorner
     var isHarbor: Bool = false
