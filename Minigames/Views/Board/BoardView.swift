@@ -9,47 +9,33 @@ import SwiftUI
 
 struct BoardView<Game: SettlersGame>: View {
     
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var board: BoardViewModel<Game>
     
     var body: some View {
-        HexagonStack(boardVM) { row, column, size in
+        HexagonStack(board) { row, column, size in
             tileView(row: row, column: column, size: size)
         }
-        .buildingsOverlay(boardVM){ building in
-            buildingView(for: building)
-        }
-        .padding()
+        .buildingsOverlay(board)
+//        .zoomable()
     }
     
-    @ViewBuilder
-    private func buildingView(for building: Building) -> some View {
-        switch building {
-        case .city(_, let owner):
-            CityView<Game>(for: owner)
-        case .settelment(_, let owner):
-            SettlementView<Game>(for: owner)
-        case .road(_, let owner):
-            RoadView<Game>(for: owner)
-        }
-    }
     
     @ViewBuilder
     private func tileView(row: Int, column: Int, size: CGFloat) -> some View {
-        if let tile = boardVM.tileAt(row, column){
+        if let tile = board.tileAt(row, column){
             TileView<Game>(tile)
-                .environmentObject(boardVM)
+                .environmentObject(board)
                 .frame(width: size, height: size)
                 .clipShape(Hexagon())
-                .shadow(color: tileShadow(for: tile), radius: 20)
+                .shadow(color: tileShadow(for: tile), radius: board.shadowRadius)
             
         } else {
             Image(systemName: "exclamationmark.triangle")
-            
         }
     }
     
     private func tileShadow(for tile: Tile) -> Color {
-        if tile == boardVM.knightHoveringTile {
+        if tile == board.knightHoveringTile {
             return tile.knightIsIn ? .red : .green
         } else {
             return .clear
@@ -64,12 +50,14 @@ struct BoardView_Previews: PreviewProvider {
         let vm = BoardViewModel(gameVM: mocGameViewModel)
         
         return Group {
-            BoardView(boardVM: vm)
+            BoardView(board: vm)
                 .previewLayout(.fixed(width: 1000, height: 1000))
             
-            BoardView(boardVM: vm)
+            BoardView(board: vm)
                 .preferredColorScheme(.dark)
                 .previewLayout(.fixed(width: 1000, height: 1000))
         }
+        .padding()
+
     }
 }

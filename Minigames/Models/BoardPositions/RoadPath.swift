@@ -8,7 +8,7 @@
 import Foundation
 import simd
 
-class RoadPath: BoardPosition {
+struct RoadPath: BoardPosition {
     
     private var tileSide: TileSide
     private var tile: Tile

@@ -19,7 +19,7 @@ struct CityView<Game: SettlersGame>: View {
         SettlementView<Game>(for: owner)
             .overlay(
                 Text("×2")
-                    .font(.system(size: CGFloat(boardVM.radius) * 0.2))
+                    .font(boardVM.textFont)
             )
     }
 }

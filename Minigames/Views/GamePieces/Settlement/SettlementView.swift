@@ -18,6 +18,7 @@ struct SettlementView<Game: SettlersGame>: View {
     var body: some View {
         Circle()
             .fill(Color(owner.color))
-            .frame(width: CGFloat(boardVM.radius) * 0.4)
+            .frame(width: boardVM.setlementSize,
+                   height: boardVM.setlementSize)
     }
 }

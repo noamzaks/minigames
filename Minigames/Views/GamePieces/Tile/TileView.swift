@@ -47,18 +47,18 @@ struct TileView<Game: SettlersGame>: View {
                 VStack(spacing: 0) {
                     
                     Text("\(diceValue.value)")
-                        .font(.system(size: size.width * self.textRelativeSize))
+                        .font(boardVM.diceValueFont)
                     
-                    HStack(spacing: size.width * self.dotsRelativeSize) {
+                    HStack(spacing: self.boardVM.probabilityDotSize) {
                         ForEach(0..<diceValue.probability) { _ in
                             Circle()
-                                .frame(width: dotSize(in: size),
-                                       height: dotSize(in: size))
+                                .frame(width: boardVM.probabilityDotSize,
+                                       height: boardVM.probabilityDotSize)
                         }
                     }
                 }
-                .frame(width: size.height * self.tagRelativeSize,
-                       height: size.width * self.tagRelativeSize)
+                .frame(width: boardVM.tagRadius,
+                       height:boardVM.tagRadius)
                 .background(Color(UIColor.systemBackground))
                 .clipShape(Circle())
                 
@@ -80,34 +80,23 @@ struct TileView<Game: SettlersGame>: View {
     private func icon(for tile: Tile, in size: CGSize) -> some View {
         if let icon = tile.terrain.resource?.icon {
             Text(icon)
-                .font(.system(size: size.width * self.iconRelativeSize))
+                .font(boardVM.bigIconFont)
         }
     }
     
     func knightOffset(for size: CGSize) -> CGSize {
         guard tile.diceValue != nil else { return .zero }
         
-        let y = size.height * self.tagRelativeSize * 0.5
-        let x = size.width * self.tagRelativeSize * -0.5
+        let y = self.boardVM.tagRadius * 0.5
+        let x = self.boardVM.tagRadius * -0.5
         return CGSize(width: x, height: y)
     }
     
     func iconOffset(for size: CGSize) -> CGSize {
-        let y = size.height * self.tagRelativeSize * 0.5
-        let x = size.width * self.tagRelativeSize * 0.5
+        let y = self.boardVM.tagRadius * 0.5
+        let x = self.boardVM.tagRadius * 0.5
         return CGSize(width: x, height: y)
     }
-    
-    func dotSize(in size: CGSize) -> CGFloat {
-        min(size.width * self.dotsRelativeSize,
-            size.height * self.dotsRelativeSize)
-    }
-    
-    private var tagRelativeSize: CGFloat = 0.33
-    private var textRelativeSize: CGFloat = 0.15
-    private var knightRelativeSize: CGFloat = 0.23
-    private var iconRelativeSize: CGFloat = 0.18
-    private var dotsRelativeSize: CGFloat = 0.015
     
 }
 

@@ -15,6 +15,9 @@ class LocalSettlersGame: SettlersGame {
     @Published var buildings: [Building] = []
     var buildingsPublisher: Published<[Building]>.Publisher { $buildings }
     
+    @Published var harbors: [Harbor] = []
+    var harborsPublisher: Published<[Harbor]>.Publisher { $harbors }
+    
     @Published var tiles: [Tile] = []
     var tilesPublisher: Published<[Tile]>.Publisher { $tiles }
     
@@ -51,9 +54,9 @@ class LocalSettlersGame: SettlersGame {
             let pos = positions.popLast()!
             tiles.append(Tile(terrain: terrains.popLast()!, dice: diceValue, row: pos.row, column: pos.column, knightIsIn: false))
         }
-        
+
         tiles.append(Tile(terrain: .desert, dice: nil, row: positions.first!.row, column: positions.first!.column, knightIsIn: true))
-        
+
         tiles[0].knightIsIn = true
         
         //moc buildings:
@@ -69,7 +72,12 @@ class LocalSettlersGame: SettlersGame {
         self.buildings.append(.settelment(intersection: Intersection(on: tiles.get(row: 4, column: 2)!, at: .top), owner: players[1]))
         self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 3, column: 2)!, at: .right), owner: players[1]))
         self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 2, column: 4)!, at: .top), owner: players[1]))
-        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 4)!, at: .topRight), owner: players[1]))
+        self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 4)!, at: .bottomLeft), owner: players[1]))
+        
+        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 0, column: 0)!, at: .topLeft), get: [.brick], give: [.lumber]))
+        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 4, column: 2)!, at: .bottom), get: [.brick], give: [.lumber]))
+        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 4, column: 0)!, at: .bottomLeft), get: [.brick], give: [.lumber]))
+        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 0, column: 2)!, at: .top), get: [.brick], give: [.lumber]))
         
     }
     

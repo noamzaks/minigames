@@ -17,14 +17,13 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     @Published var currentPlayerID: UUID? = nil
     
     @Published var tiles: [Tile] = []
+    @Published var harbors: [Harbor] = []
     @Published var buildings: [Building] = []
     @Published var players: [Player] = []
     @Published var trades: [Trade] = []
     
     @Published var gameState: SettlersGameState = SettlersGameState.waitingForPlayers(connectedPlayers: [])
-    
-    private var colors: [UUID: UIColor] = [:]
-    
+        
     private var cancellables: Array<AnyCancellable> = .init()
     
     init(_ player: Player) {
@@ -41,6 +40,10 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
 
         game.tilesPublisher
             .assign(to: \.tiles, on: self)
+            .store(in: &cancellables)
+        
+        game.harborsPublisher
+            .assign(to: \.harbors, on: self)
             .store(in: &cancellables)
         
         game.playersPublisher
@@ -78,14 +81,6 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     }
     
     //MARK: UI support
-    
-    func color(for player: Player) -> UIColor {
-        color(for: player.id)
-    }
-    
-    func color(for playerID: UUID) -> UIColor {
-        self.colors[playerID] ?? UIColor.clear
-    }
 }
 
 #if DEBUG

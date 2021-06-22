@@ -7,15 +7,13 @@
 
 import Foundation
 
-class Intersection: BoardPosition {
+struct Intersection: BoardPosition {
     var tile: Tile
     var tileCorner: TileCorner
-    var isHarbor: Bool = false
         
     init(on tile: Tile, at corner: TileCorner, isHarbor: Bool = false) {
         self.tile = tile
         self.tileCorner = corner
-        self.isHarbor = isHarbor
     }
     
 }

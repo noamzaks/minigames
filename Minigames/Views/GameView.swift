@@ -38,7 +38,7 @@ struct GameView<Game: SettlersGame>: View {
                     Spacer()
                 }
                 
-                BoardView(boardVM: boardVM)
+                BoardView(board: boardVM)
                 
                 
                 HStack(alignment: .bottom) {
@@ -47,6 +47,10 @@ struct GameView<Game: SettlersGame>: View {
                     ResourceBarView(player: gameVM.localPlayer)
                     
                     DraggableRobberView(boardVM: self.boardVM)
+                    
+                    DraggbleRoadView(boardVM: self.boardVM)
+                    
+                    DraggableSettlementView(boardVM: self.boardVM)
                 }
                 
                 

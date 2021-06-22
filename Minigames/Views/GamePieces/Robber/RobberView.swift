@@ -13,7 +13,7 @@ struct RobberView<Game: SettlersGame>: View {
         
     var body: some View {
         Text("🥷")
-            .font(.system(size: boardVM.itemSize * self.knightRelativeSize))
+            .font(boardVM.bigIconFont)
     }
     
     private var knightRelativeSize: CGFloat = 0.23

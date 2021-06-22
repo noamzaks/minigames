@@ -18,7 +18,7 @@ struct DraggableRobberView<Game: SettlersGame>: View {
     
     var body: some View {
         RobberView<Game>()
-            .draggableGamePiece($boardVM.knightLocation) {
+            .draggableGamePiece($boardVM.DraggedRobberLocation) {
                 
             }
             .environmentObject(boardVM)

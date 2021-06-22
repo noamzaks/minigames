@@ -22,7 +22,8 @@ struct RoadView<Game: SettlersGame>: View {
 //            Color(owner.color)
 //                .brightness(0.1)
         }
-        .frame(width:   CGFloat(boardVM.radius) * 0.8,
-               height:  CGFloat(boardVM.radius) * 0.15)
+        .cornerRadius(boardVM.roadSizes.cornerRadius)
+        .frame(width:   boardVM.roadSizes.width,
+               height:  boardVM.roadSizes.height)
     }
 }

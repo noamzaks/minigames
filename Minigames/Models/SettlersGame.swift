@@ -9,6 +9,7 @@ protocol SettlersGame {
      */
     
     var tilesPublisher:                 Published<[Tile]>.Publisher             { get }
+    var harborsPublisher:               Published<[Harbor]>.Publisher           { get }
     var playersPublisher:               Published<[Player]>.Publisher           { get }
     var currentPlayerIDPublisher:       Published<UUID?>.Publisher              { get }
     var gameStatePublisher:             Published<SettlersGameState>.Publisher  { get }
