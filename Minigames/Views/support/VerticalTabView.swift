@@ -9,16 +9,18 @@ import SwiftUI
 
 struct VerticalTabView<Contnet: View>: View {
     
+    var selection: Binding<Int>?
     var content: () -> Contnet
     
-    init(@ViewBuilder content: @escaping () -> Contnet) {
+    init(_ selection: Binding<Int>? = nil, @ViewBuilder content: @escaping () -> Contnet) {
         self.content = content
+        self.selection = selection
     }
     
     var body: some View {
         GeometryReader{ geometry in
             
-            TabView {
+            TabView(selection: selection) {
                 content()
                     .rotationEffect(.degrees(-90)) // Rotate content
                     .frame(

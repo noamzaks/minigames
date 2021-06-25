@@ -23,17 +23,19 @@ struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
                    
             }
             
-            // drop previews
-            roadDropPreview
-            settlementDropPreview
-           
-            
-            
 //            ForEach(boardVM.harbors, id: \.self) { harbor in
 //                HarborView<Game>(harbor: harbor)
+//                    .frame(width: CGFloat(boardVM.radius), height: CGFloat( boardVM.radius))
+//                    .rotationEffect(.radians(harbor.path.angle), anchor: .bottom)
 //                    .offset(offset(for: harbor))
 //
 //            }
+            
+            // drop previews
+            roadDropPreview
+            settlementDropPreview
+            
+            
             
         }
             .environmentObject(boardVM)

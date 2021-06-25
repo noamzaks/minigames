@@ -28,8 +28,7 @@ struct PlayersBarView<Game: SettlersGame>: View {
     @ViewBuilder
     var playersViews: some View {
         ForEach(gameVM.players) { player in
-            PlayerView(currentPlayerID: gameVM.currentPlayerID)
-                .environmentObject(player)
+            PlayerView(player: player)
         }
     }
     

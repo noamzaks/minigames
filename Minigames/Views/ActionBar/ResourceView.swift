@@ -17,7 +17,7 @@ struct ResourceView: View {
             Text("\(resource.icon)")
             Text("\(player.resources.count(of: resource))")
         }
-        .padding()
+        .padding(10)
 //        .background(Color(resource.matchedColor))
 //        .background(Color.gray)
         .clipShape(Capsule())

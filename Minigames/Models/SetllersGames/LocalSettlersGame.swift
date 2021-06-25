@@ -74,10 +74,10 @@ class LocalSettlersGame: SettlersGame {
         self.buildings.append(.city(intersection: Intersection(on: tiles.get(row: 2, column: 4)!, at: .top), owner: players[1]))
         self.buildings.append(.road(path: RoadPath(on: tiles.get(row: 2, column: 4)!, at: .bottomLeft), owner: players[1]))
         
-        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 0, column: 0)!, at: .topLeft), get: [.brick], give: [.lumber]))
-        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 4, column: 2)!, at: .bottom), get: [.brick], give: [.lumber]))
-        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 4, column: 0)!, at: .bottomLeft), get: [.brick], give: [.lumber]))
-        self.harbors.append(Harbor(at:Intersection(on: tiles.get(row: 0, column: 2)!, at: .top), get: [.brick], give: [.lumber]))
+        self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 0, column: 0)!, at: .left), get: [.brick], give: [.lumber]))
+        self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 4, column: 2)!, at: .right), get: [.lumber], give: [.lumber]))
+        self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 4, column: 0)!, at: .bottomLeft), get: [.brick], give: [.wool]))
+        self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 0, column: 2)!, at: .topRight), get: [.brick], give: [.lumber]))
         
     }
     

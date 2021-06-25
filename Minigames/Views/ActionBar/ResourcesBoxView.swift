@@ -1,13 +1,13 @@
 //
-//  ResourceBarView.swift
+//  ResourcesBoxView.swift
 //  Minigames
 //
-//  Created by Tomer Israeli on 03/06/2021.
+//  Created by Tomer Israeli on 23/06/2021.
 //
 
 import SwiftUI
 
-struct ResourceBarView: View {
+struct ResourcesBoxView: View {
     
     @ObservedObject var player: Player
     
@@ -17,18 +17,18 @@ struct ResourceBarView: View {
                 ResourceView(resource: resource)
             }
         }
-        .environmentObject(player)        
+        .environmentObject(player)
     }
 }
 
-struct ResourceBarView_Previews: PreviewProvider {
+struct ResourcesBoxView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ResourceBarView(player: Player("cool"))
+            ResourcesBoxView(player: Player("cool"))
             
-            ResourceBarView(player: Player("cool"))
+            ResourcesBoxView(player: Player("cool"))
                 .preferredColorScheme(.dark)
         }
-        .previewLayout(.fixed(width: 300, height: 3000))
+        .previewLayout(.fixed(width: 500, height: 300))
     }
 }

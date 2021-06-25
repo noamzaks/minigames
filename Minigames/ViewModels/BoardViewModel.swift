@@ -121,7 +121,7 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel {
     var diceValueFont: Font { .system(size: CGFloat(self.radius) * 0.3) }
     var textFont: Font      { .system(size: CGFloat(self.radius) * 0.2)}
     
-    var setlementSize: CGFloat      { CGFloat(self.radius) * 0.3 }
+    var setlementSize: CGFloat      { CGFloat(self.radius) * 0.35 }
     var probabilityDotSize: CGFloat { CGFloat(self.radius * 0.03) }
     var tagRadius: CGFloat          { CGFloat(self.radius * 0.66) }
     var shadowRadius: CGFloat       { CGFloat(self.radius * 0.1) }

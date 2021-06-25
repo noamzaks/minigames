@@ -29,7 +29,6 @@
 		F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59D92667D45000C1BD98 /* BoardView.swift */; };
 		F10B59DC2667DA3D00C1BD98 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DB2667DA3D00C1BD98 /* TileView.swift */; };
 		F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59DE26680E0100C1BD98 /* ResourceView.swift */; };
-		F10B59E12668C9EE00C1BD98 /* ResourceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */; };
 		F10B59E32668CB0500C1BD98 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E22668CB0500C1BD98 /* PlayerView.swift */; };
 		F10B59E72668CE4000C1BD98 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E62668CE4000C1BD98 /* URLImageView.swift */; };
 		F10B59EA2668F50D00C1BD98 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B59E92668F50D00C1BD98 /* ImageLoader.swift */; };
@@ -41,7 +40,6 @@
 		F10F3204266B482E0090F6C8 /* BuildingsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */; };
 		F145BFF1266D59170063519F /* VerticalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF0266D59170063519F /* VerticalTabView.swift */; };
 		F145BFF62670EAEC0063519F /* ActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF52670EAEC0063519F /* ActionBarView.swift */; };
-		F145BFF82670ED930063519F /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFF72670ED930063519F /* DiceView.swift */; };
 		F145BFFB2673E8610063519F /* TradesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFFA2673E8610063519F /* TradesListView.swift */; };
 		F145BFFD2673E8980063519F /* Trade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFFC2673E8980063519F /* Trade.swift */; };
 		F145BFFF267489030063519F /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F145BFFE267489030063519F /* BoardViewModel.swift */; };
@@ -59,6 +57,10 @@
 		F170E60B2680C7B900713CCE /* DraggableSettlementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E60A2680C7B900713CCE /* DraggableSettlementView.swift */; };
 		F170E6102681B6D600713CCE /* Zoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E60F2681B6D600713CCE /* Zoomable.swift */; };
 		F170E6122681BD8400713CCE /* CGSizes+mathOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E6112681BD8400713CCE /* CGSizes+mathOperations.swift */; };
+		F170E6142683C6F000713CCE /* ResourcesBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E6132683C6F000713CCE /* ResourcesBoxView.swift */; };
+		F170E6172684752700713CCE /* GameStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E6162684752700713CCE /* GameStateView.swift */; };
+		F170E619268519CF00713CCE /* CapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E618268519CF00713CCE /* CapsuleButtonStyle.swift */; };
+		F170E61B26851B7500713CCE /* DraggablesBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E61A26851B7500713CCE /* DraggablesBoxView.swift */; };
 		F19B6B5026764CF600FEAB58 /* HexagonStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */; };
 		F19B786F267936690049673B /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B786E267936690049673B /* Pie.swift */; };
 /* End PBXBuildFile section */
@@ -88,7 +90,6 @@
 		F10B59D92667D45000C1BD98 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardView.swift; path = Minigames/Views/board/BoardView.swift; sourceTree = SOURCE_ROOT; };
 		F10B59DB2667DA3D00C1BD98 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = Minigames/Views/GamePieces/Tile/TileView.swift; sourceTree = SOURCE_ROOT; };
 		F10B59DE26680E0100C1BD98 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
-		F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceBarView.swift; sourceTree = "<group>"; };
 		F10B59E22668CB0500C1BD98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		F10B59E62668CE4000C1BD98 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		F10B59E92668F50D00C1BD98 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		F10F3203266B482E0090F6C8 /* BuildingsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BuildingsModifier.swift; path = Minigames/Views/board/BuildingsModifier.swift; sourceTree = SOURCE_ROOT; };
 		F145BFF0266D59170063519F /* VerticalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTabView.swift; sourceTree = "<group>"; };
 		F145BFF52670EAEC0063519F /* ActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBarView.swift; sourceTree = "<group>"; };
-		F145BFF72670ED930063519F /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		F145BFFA2673E8610063519F /* TradesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradesListView.swift; sourceTree = "<group>"; };
 		F145BFFC2673E8980063519F /* Trade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trade.swift; sourceTree = "<group>"; };
 		F145BFFE267489030063519F /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoardViewModel.swift; path = Minigames/ViewModels/BoardViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -118,6 +118,10 @@
 		F170E60A2680C7B900713CCE /* DraggableSettlementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableSettlementView.swift; sourceTree = "<group>"; };
 		F170E60F2681B6D600713CCE /* Zoomable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoomable.swift; sourceTree = "<group>"; };
 		F170E6112681BD8400713CCE /* CGSizes+mathOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSizes+mathOperations.swift"; sourceTree = "<group>"; };
+		F170E6132683C6F000713CCE /* ResourcesBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesBoxView.swift; sourceTree = "<group>"; };
+		F170E6162684752700713CCE /* GameStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateView.swift; sourceTree = "<group>"; };
+		F170E618268519CF00713CCE /* CapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonStyle.swift; sourceTree = "<group>"; };
+		F170E61A26851B7500713CCE /* DraggablesBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggablesBoxView.swift; sourceTree = "<group>"; };
 		F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonStackViewModel.swift; sourceTree = "<group>"; };
 		F19B786E267936690049673B /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,15 +200,13 @@
 		F10B59AB2662AE9100C1BD98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F170E615268474F300713CCE /* ActionBar */,
 				F10B59E52668CE2500C1BD98 /* support */,
 				F170E5EE267C8EEF00713CCE /* GamePieces */,
 				49E8BCBD2662D11F001EF4B2 /* Board */,
 				F145BFF92673E8120063519F /* Trades */,
-				F10B59E42668CBD200C1BD98 /* PlayersBar */,
-				F10B59DD26680DED00C1BD98 /* ResourceBar */,
 				49649C8926628FBF008EF8DE /* SettlersGameApp.swift */,
 				F10B59D42667BB7600C1BD98 /* GameView.swift */,
-				F145BFF52670EAEC0063519F /* ActionBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,24 +237,6 @@
 			path = SetllersGames;
 			sourceTree = "<group>";
 		};
-		F10B59DD26680DED00C1BD98 /* ResourceBar */ = {
-			isa = PBXGroup;
-			children = (
-				F10B59DE26680E0100C1BD98 /* ResourceView.swift */,
-				F10B59E02668C9EE00C1BD98 /* ResourceBarView.swift */,
-			);
-			path = ResourceBar;
-			sourceTree = "<group>";
-		};
-		F10B59E42668CBD200C1BD98 /* PlayersBar */ = {
-			isa = PBXGroup;
-			children = (
-				F10B59E22668CB0500C1BD98 /* PlayerView.swift */,
-				F10B59EB26691AEF00C1BD98 /* PlayersBarView.swift */,
-			);
-			path = PlayersBar;
-			sourceTree = "<group>";
-		};
 		F10B59E52668CE2500C1BD98 /* support */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,10 +244,10 @@
 				F10F320A266C13710090F6C8 /* shpaes */,
 				F10B59E82668F4EF00C1BD98 /* URLImageView */,
 				F145BFF0266D59170063519F /* VerticalTabView.swift */,
-				F145BFF72670ED930063519F /* DiceView.swift */,
 				F170E5F5267CF5A400713CCE /* SIMD2+CGSize.swift */,
 				F170E60F2681B6D600713CCE /* Zoomable.swift */,
 				F170E6112681BD8400713CCE /* CGSizes+mathOperations.swift */,
+				F170E618268519CF00713CCE /* CapsuleButtonStyle.swift */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -387,6 +371,20 @@
 			path = HexagonStack;
 			sourceTree = "<group>";
 		};
+		F170E615268474F300713CCE /* ActionBar */ = {
+			isa = PBXGroup;
+			children = (
+				F170E61A26851B7500713CCE /* DraggablesBoxView.swift */,
+				F10B59DE26680E0100C1BD98 /* ResourceView.swift */,
+				F170E6132683C6F000713CCE /* ResourcesBoxView.swift */,
+				F145BFF52670EAEC0063519F /* ActionBarView.swift */,
+				F10B59E22668CB0500C1BD98 /* PlayerView.swift */,
+				F10B59EB26691AEF00C1BD98 /* PlayersBarView.swift */,
+				F170E6162684752700713CCE /* GameStateView.swift */,
+			);
+			path = ActionBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -456,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F170E6172684752700713CCE /* GameStateView.swift in Sources */,
 				F10B59C52665522600C1BD98 /* Array+Resource.swift in Sources */,
 				49649C8A26628FBF008EF8DE /* SettlersGameApp.swift in Sources */,
 				F10B59D32667509200C1BD98 /* SettlersGameViewModel.swift in Sources */,
@@ -480,11 +479,11 @@
 				F170E5F2267C8F5500713CCE /* RobberView.swift in Sources */,
 				F170E5F0267C8F1200713CCE /* DraggableRobberView.swift in Sources */,
 				F10B59CB26655B3A00C1BD98 /* SettlersGameState.swift in Sources */,
+				F170E6142683C6F000713CCE /* ResourcesBoxView.swift in Sources */,
 				F10F31FD266A894E0090F6C8 /* Intersection.swift in Sources */,
 				F19B6B5026764CF600FEAB58 /* HexagonStackViewModel.swift in Sources */,
 				F10B59B72663A48900C1BD98 /* HexagonStack.swift in Sources */,
 				F10B59B22662B1B200C1BD98 /* Tile.swift in Sources */,
-				F10B59E12668C9EE00C1BD98 /* ResourceBarView.swift in Sources */,
 				F145C0012674AA050063519F /* DraggableGamePieceModifier.swift in Sources */,
 				F170E5FF267E584A00713CCE /* SettlementView.swift in Sources */,
 				F10B59EA2668F50D00C1BD98 /* ImageLoader.swift in Sources */,
@@ -492,11 +491,11 @@
 				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */,
 				F170E602267E589C00713CCE /* CityView.swift in Sources */,
+				F170E619268519CF00713CCE /* CapsuleButtonStyle.swift in Sources */,
 				F10F31FB266A891C0090F6C8 /* Building.swift in Sources */,
 				F10B59AE2662AFC200C1BD98 /* Hexagon.swift in Sources */,
 				F170E6062680976300713CCE /* Harbor.swift in Sources */,
 				F10B59DF26680E0100C1BD98 /* ResourceView.swift in Sources */,
-				F145BFF82670ED930063519F /* DiceView.swift in Sources */,
 				F10B59DA2667D45000C1BD98 /* BoardView.swift in Sources */,
 				F170E60B2680C7B900713CCE /* DraggableSettlementView.swift in Sources */,
 				F10F31F9266A88C40090F6C8 /* TileCorner.swift in Sources */,
@@ -507,6 +506,7 @@
 				F170E6122681BD8400713CCE /* CGSizes+mathOperations.swift in Sources */,
 				F170E5FB267E57C400713CCE /* RoadView.swift in Sources */,
 				F170E6092680B2C500713CCE /* HarborView.swift in Sources */,
+				F170E61B26851B7500713CCE /* DraggablesBoxView.swift in Sources */,
 				F10B59E72668CE4000C1BD98 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

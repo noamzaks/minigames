@@ -21,44 +21,33 @@ struct GameView<Game: SettlersGame>: View {
     
     var body: some View {
         mainView
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea([.bottom, .horizontal])
         
     }
     
     private var mainView: some View {
         ZStack(alignment: .bottom) {
-
+            
             VStack {
                 
-                HStack {
-                
-                PlayerView(currentPlayerID: gameVM.currentPlayerID)
-                    .environmentObject(gameVM.localPlayer)
-                    
-                    Spacer()
-                }
+//                HStack {
+//
+//                    PlayerView(currentPlayerID: gameVM.currentPlayerID)
+//                        .environmentObject(gameVM.localPlayer)
+//
+//                    Spacer()
+//                }
                 
                 BoardView(board: boardVM)
                 
+                Divider()
                 
-                HStack(alignment: .bottom) {
-                    
-                    
-                    ResourceBarView(player: gameVM.localPlayer)
-                    
-                    DraggableRobberView(boardVM: self.boardVM)
-                    
-                    DraggbleRoadView(boardVM: self.boardVM)
-                    
-                    DraggableSettlementView(boardVM: self.boardVM)
-                }
-                
+                ActionBarView(boardVM: boardVM)
+                    .frame(height: 100)
+                    .edgesIgnoringSafeArea([.horizontal])
+                    .zIndex(1)
                 
             }
-            
-//            Circle()
-//                .frame(width: 30, height: 30)
-//                .position(boardVM.knightPosition)
             
             
         }
@@ -79,7 +68,7 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             GameView(mocGameViewModel)
-                .preferredColorScheme(.light)
+                .preferredColorScheme(.dark)
         }
     }
 }
