@@ -9,9 +9,9 @@ import SwiftUI
 import Combine
 import simd
 
-class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel {
+class BoardViewModel: HexagonStackViewModel {
     
-    @Published var gameVM: SettlersGameViewModel<Game>
+    @Published var gameVM: SettlersGameViewModel
     private var cancellables: [AnyCancellable] = []
     
     //MARK: robber drag and drop
@@ -38,7 +38,7 @@ class BoardViewModel<Game: SettlersGame>: HexagonStackViewModel {
         return true // make real validation
     }
     
-    init(gameVM: SettlersGameViewModel<Game>) {
+    init(gameVM: SettlersGameViewModel) {
         self.gameVM = gameVM
         super.init()
         

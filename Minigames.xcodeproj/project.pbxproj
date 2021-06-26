@@ -63,7 +63,8 @@
 		F170E61B26851B7500713CCE /* DraggablesBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170E61A26851B7500713CCE /* DraggablesBoxView.swift */; };
 		F19B6B5026764CF600FEAB58 /* HexagonStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */; };
 		F19B786F267936690049673B /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B786E267936690049673B /* Pie.swift */; };
-		F1BB645626870AFF00422292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BB645526870AFF00422292 /* LaunchScreen.storyboard */; };
+		F1A0B73726876BB600BE1577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A0B73626876BB600BE1577 /* LaunchScreen.storyboard */; };
+		F1BB645826871A8600422292 /* GamesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB645726871A8600422292 /* GamesStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +126,8 @@
 		F170E61A26851B7500713CCE /* DraggablesBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggablesBoxView.swift; sourceTree = "<group>"; };
 		F19B6B4F26764CF600FEAB58 /* HexagonStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonStackViewModel.swift; sourceTree = "<group>"; };
 		F19B786E267936690049673B /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
-		F1BB645526870AFF00422292 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1A0B73626876BB600BE1577 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1BB645726871A8600422292 /* GamesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				F10B59D22667509200C1BD98 /* SettlersGameViewModel.swift */,
 				F145BFFE267489030063519F /* BoardViewModel.swift */,
+				F1BB645726871A8600422292 /* GamesStore.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -242,7 +245,6 @@
 		F10B59E52668CE2500C1BD98 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				F1BB645526870AFF00422292 /* LaunchScreen.storyboard */,
 				F170E60E26811FE000713CCE /* HexagonStack */,
 				F10F320A266C13710090F6C8 /* shpaes */,
 				F10B59E82668F4EF00C1BD98 /* URLImageView */,
@@ -251,6 +253,7 @@
 				F170E60F2681B6D600713CCE /* Zoomable.swift */,
 				F170E6112681BD8400713CCE /* CGSizes+mathOperations.swift */,
 				F170E618268519CF00713CCE /* CapsuleButtonStyle.swift */,
+				F1A0B73626876BB600BE1577 /* LaunchScreen.storyboard */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -445,7 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1BB645626870AFF00422292 /* LaunchScreen.storyboard in Resources */,
+				F1A0B73726876BB600BE1577 /* LaunchScreen.storyboard in Resources */,
 				49649C9126628FC1008EF8DE /* Preview Assets.xcassets in Resources */,
 				49649C8E26628FC1008EF8DE /* Assets.xcassets in Resources */,
 			);
@@ -494,6 +497,7 @@
 				F10B59D82667BC1E00C1BD98 /* LocalSettlersGame.swift in Sources */,
 				F10B59C22665515C00C1BD98 /* Player.swift in Sources */,
 				F10B59CD26669B7B00C1BD98 /* SetllersGameError.swift in Sources */,
+				F1BB645826871A8600422292 /* GamesStore.swift in Sources */,
 				F170E602267E589C00713CCE /* CityView.swift in Sources */,
 				F170E619268519CF00713CCE /* CapsuleButtonStyle.swift in Sources */,
 				F10F31FB266A891C0090F6C8 /* Building.swift in Sources */,
@@ -641,14 +645,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Minigames/Preview Content\"";
-				DEVELOPMENT_TEAM = 4Q5V9SF85N;
+				DEVELOPMENT_TEAM = VP54HMF48G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Minigames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.noamzaks.Minigames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomerisraeli.Minigames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -662,14 +666,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Minigames/Preview Content\"";
-				DEVELOPMENT_TEAM = 4Q5V9SF85N;
+				DEVELOPMENT_TEAM = VP54HMF48G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Minigames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.noamzaks.Minigames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomerisraeli.Minigames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RobberView<Game: SettlersGame>: View {
+struct RobberView: View {
     
-    @EnvironmentObject var boardVM: BoardViewModel<Game>
+    @EnvironmentObject var boardVM: BoardViewModel
         
     var body: some View {
         Text("🥷")
@@ -22,7 +22,7 @@ struct RobberView<Game: SettlersGame>: View {
 
 struct KnightView_Previews: PreviewProvider {
     static var previews: some View {
-        RobberView<LocalSettlersGame>()
+        RobberView()
             .environmentObject(BoardViewModel(gameVM: mocGameViewModel))
     }
 }

@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct DraggableSettlementView<Game: SettlersGame>: View {
-    @ObservedObject var boardVM: BoardViewModel<Game>
+struct DraggableSettlementView: View {
+    @ObservedObject var boardVM: BoardViewModel
     
-    init(boardVM: BoardViewModel<Game>) {
+    init(boardVM: BoardViewModel) {
         self.boardVM = boardVM
         
         
     }
     
     var body: some View {
-        SettlementView<Game>(for: boardVM.gameVM.localPlayer)
+        SettlementView(for: boardVM.gameVM.localPlayer)
             .shadow(color: shadowColor, radius: 10)
             .shadow(color: shadowColor, radius: 10)
             .draggableGamePiece($boardVM.draggedSettlementLocation) {

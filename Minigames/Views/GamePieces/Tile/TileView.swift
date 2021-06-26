@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TileView<Game: SettlersGame>: View {
+struct TileView: View {
     
-    @EnvironmentObject var boardVM: BoardViewModel<Game>
+    @EnvironmentObject var boardVM: BoardViewModel
     @ObservedObject var tile: Tile
     
     init(_ tile: Tile) {
@@ -68,7 +68,7 @@ struct TileView<Game: SettlersGame>: View {
                 .offset(iconOffset(for: size))
             
             if tile.knightIsIn {
-                RobberView<Game>()
+                RobberView()
                     .offset(knightOffset(for: size))
             }
             
@@ -105,9 +105,9 @@ struct TileView<Game: SettlersGame>: View {
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TileView<LocalSettlersGame>(Tile(terrain: .mountains, dice: (12,1), row: 2, column: 2, knightIsIn: false))
+            TileView(Tile(terrain: .mountains, dice: (12,1), row: 2, column: 2, knightIsIn: false))
             
-            TileView<LocalSettlersGame>(Tile(terrain: .mountains, dice: (12,1), row: 2, column: 2, knightIsIn: false))
+            TileView(Tile(terrain: .mountains, dice: (12,1), row: 2, column: 2, knightIsIn: false))
                 .preferredColorScheme(.dark)
             
         }

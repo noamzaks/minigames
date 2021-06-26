@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct SettlementView<Game: SettlersGame>: View {
+struct SettlementView: View {
     var owner: Player
-    @EnvironmentObject var boardVM: BoardViewModel<Game>
+    @EnvironmentObject var boardVM: BoardViewModel
     
     init(for owner: Player) {
         self.owner = owner

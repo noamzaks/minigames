@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ActionBarView<Game: SettlersGame>: View {
+struct ActionBarView: View {
     
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var boardVM: BoardViewModel
     
     @State private var selection: Int = 0
     
-    init(boardVM: BoardViewModel<Game>) {
+    init(boardVM: BoardViewModel) {
         self.boardVM = boardVM
     }
     
@@ -21,7 +21,7 @@ struct ActionBarView<Game: SettlersGame>: View {
         HStack(alignment: .bottom) {
             
             TabView(selection: $selection) {
-                GameStateView<Game>()
+                GameStateView()
                     .tag(0)
                 
                 ResourcesBoxView(player: self.boardVM.gameVM.localPlayer)

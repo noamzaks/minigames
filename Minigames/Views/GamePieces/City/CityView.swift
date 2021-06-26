@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct CityView<Game: SettlersGame>: View {
+struct CityView: View {
     var owner: Player
-    @EnvironmentObject var boardVM: BoardViewModel<Game>
+    @EnvironmentObject var boardVM: BoardViewModel
     
     init(for owner: Player) {
         self.owner = owner
     }
     
     var body: some View {
-        SettlementView<Game>(for: owner)
+        SettlementView(for: owner)
             .overlay(
                 Text("×2")
                     .font(boardVM.textFont)

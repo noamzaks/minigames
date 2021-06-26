@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct GameView<Game: SettlersGame>: View {
+struct GameView: View {
     
-    @ObservedObject var gameVM: SettlersGameViewModel<Game>
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var gameVM: SettlersGameViewModel
+    @ObservedObject var boardVM: BoardViewModel
     
     @State private var showSecodary: Bool = false
     
-    init(_ gameVM: SettlersGameViewModel<Game>) {
+    init(_ gameVM: SettlersGameViewModel) {
         self.boardVM = BoardViewModel(gameVM: gameVM)
         self.gameVM = gameVM
     }

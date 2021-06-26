@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct DraggableRobberView<Game: SettlersGame>: View {
+struct DraggableRobberView: View {
     
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var boardVM: BoardViewModel
     
-    init(boardVM: BoardViewModel<Game>) {
+    init(boardVM: BoardViewModel) {
         self.boardVM = boardVM
         
     }
     
     var body: some View {
-        RobberView<Game>()
+        RobberView()
             .draggableGamePiece($boardVM.DraggedRobberLocation) {
                 
             }

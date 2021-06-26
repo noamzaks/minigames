@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct GameStateView<Game: SettlersGame>: View {
+struct GameStateView: View {
     
-    @EnvironmentObject var board: BoardViewModel<Game>
+    @EnvironmentObject var board: BoardViewModel
     
     var body: some View {
         switch self.board.gameVM.gameState {

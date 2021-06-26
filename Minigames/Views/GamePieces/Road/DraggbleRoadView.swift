@@ -8,18 +8,18 @@
 import SwiftUI
 import Combine
 
-struct DraggbleRoadView<Game: SettlersGame>: View {
+struct DraggbleRoadView: View {
     
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var boardVM: BoardViewModel
     
-    init(boardVM: BoardViewModel<Game>) {
+    init(boardVM: BoardViewModel) {
         self.boardVM = boardVM
         
         
     }
     
     var body: some View {
-        RoadView<Game>(for: boardVM.gameVM.localPlayer)
+        RoadView(for: boardVM.gameVM.localPlayer)
             .shadow(color: shadowColor, radius: 10)
             .shadow(color: shadowColor, radius: 10)
             .rotationEffect(angle)

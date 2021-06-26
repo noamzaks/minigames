@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct DraggablesBoxView<Game: SettlersGame>: View {
+struct DraggablesBoxView: View {
     
-    @ObservedObject var board: BoardViewModel<Game>
+    @ObservedObject var board: BoardViewModel
     
     var body: some View {
         HStack {

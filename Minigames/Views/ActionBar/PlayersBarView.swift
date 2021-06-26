@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct PlayersBarView<Game: SettlersGame>: View {
+struct PlayersBarView: View {
     
-    @ObservedObject var gameVM: SettlersGameViewModel<Game>
+    @ObservedObject var gameVM: SettlersGameViewModel
     @Environment(\.horizontalSizeClass) var sizeClass
 
     var body: some View {

@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct MinigamesApp: App {
     
-    @ObservedObject var viewModel: SettlersGameViewModel<LocalSettlersGame>
+    @ObservedObject var viewModel: SettlersGameViewModel
     
     init() {
         viewModel = mocGameViewModel

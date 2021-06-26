@@ -9,9 +9,9 @@ import Foundation
 import Combine
 import UIKit.UIColor
 
-class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
+class SettlersGameViewModel: ObservableObject {
     
-    @Published private var game: Game
+    @Published private var game: SettlersGame
     
     @Published var localPlayerIsPlaying: Bool = false
     @Published var currentPlayerID: UUID? = nil
@@ -27,7 +27,7 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
     private var cancellables: Array<AnyCancellable> = .init()
     
     init(_ player: Player) {
-        self.game = Game(joinAs: player)
+        self.game = LocalSettlersGame(joinAs: player)
         
         game.currentPlayerIDPublisher
             .map{ $0 == self.game.localPlayerID }
@@ -83,6 +83,6 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
 
 #if DEBUG
 
-let mocGameViewModel = SettlersGameViewModel<LocalSettlersGame>(Player("tomer",.blue, URL(string: "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/07/bird-eagle-flight.jpg?h=5bbcce53&itok=wIQc9zhg")))
+let mocGameViewModel = SettlersGameViewModel(Player("tomer",.blue, URL(string: "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/07/bird-eagle-flight.jpg?h=5bbcce53&itok=wIQc9zhg")))
 
 #endif

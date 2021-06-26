@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
+struct BuildingsOverlayModifier: ViewModifier {
     
-    @ObservedObject var boardVM: BoardViewModel<Game>
+    @ObservedObject var boardVM: BoardViewModel
     
     func body(content: Content) -> some View {
         ZStack {
@@ -45,7 +45,7 @@ struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
     @ViewBuilder
     private var roadDropPreview: some View {
         if let roadPath = boardVM.draggedRoadHoveringRoadPath {
-            RoadView<Game>(for: boardVM.gameVM.localPlayer)
+            RoadView(for: boardVM.gameVM.localPlayer)
                 .opacity(0.4)
                 .rotationEffect(.radians(roadPath.angle))
                 .offset(offset(for: roadPath))
@@ -55,7 +55,7 @@ struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
     @ViewBuilder
     private var settlementDropPreview: some View {
         if let intersection = boardVM.draggedSettlementIntersection {
-            SettlementView<Game>(for: boardVM.gameVM.localPlayer)
+            SettlementView(for: boardVM.gameVM.localPlayer)
                 .opacity(0.3)
                 .offset(offset(for: intersection))
         }
@@ -65,11 +65,11 @@ struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
     private func buildingView(for building: Building) -> some View {
         switch building {
         case .city(_, let owner):
-            CityView<Game>(for: owner)
+            CityView(for: owner)
         case .settelment(_, let owner):
-            SettlementView<Game>(for: owner)
+            SettlementView(for: owner)
         case .road(_, let owner):
-            RoadView<Game>(for: owner)
+            RoadView(for: owner)
         }
     }
     
@@ -83,7 +83,7 @@ struct BuildingsOverlayModifier<Game>: ViewModifier where Game: SettlersGame{
 }
 
 extension View {
-    func buildingsOverlay<Game: SettlersGame> (_ boardVM: BoardViewModel<Game>) -> some View {
+    func buildingsOverlay(_ boardVM: BoardViewModel) -> some View {
         
         self.modifier(BuildingsOverlayModifier(boardVM: boardVM))
         

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct BoardView<Game: SettlersGame>: View {
+struct BoardView: View {
     
-    @ObservedObject var board: BoardViewModel<Game>
+    @ObservedObject var board: BoardViewModel
     
     var body: some View {
         HexagonStack(board) { row, column, size in
@@ -23,7 +23,7 @@ struct BoardView<Game: SettlersGame>: View {
     @ViewBuilder
     private func tileView(row: Int, column: Int, size: CGFloat) -> some View {
         if let tile = board.tileAt(row, column){
-            TileView<Game>(tile)
+            TileView(tile)
                 .environmentObject(board)
                 .frame(width: size, height: size)
                 .clipShape(Hexagon())

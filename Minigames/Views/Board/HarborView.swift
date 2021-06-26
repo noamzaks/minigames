@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct HarborView<Game: SettlersGame>: View {
+struct HarborView: View {
     
     var harbor: Harbor
-    @EnvironmentObject var boardVM: BoardViewModel<Game>
+    @EnvironmentObject var boardVM: BoardViewModel
     
     var body: some View {
         HStack(spacing: 0) {
