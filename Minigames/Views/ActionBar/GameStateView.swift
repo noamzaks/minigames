@@ -9,10 +9,10 @@ import SwiftUI
 
 struct GameStateView<Game: SettlersGame>: View {
     
-    @Binding var gameState: SettlersGameState
     @EnvironmentObject var board: BoardViewModel<Game>
+    
     var body: some View {
-        switch gameState {
+        switch self.board.gameVM.gameState {
         case .ended(let winner):
             gameEndedView(winner)
         case .localPlayerTurn(let showRobber, let diceRolled):
@@ -59,8 +59,18 @@ struct GameStateView<Game: SettlersGame>: View {
             Button(action: {
                 
             }, label: {
-                Text("Roll Dice")
+                Label(
+                    title: {
+                        Text("Roll Dice")
+                    }, icon: {
+                        Image("DiceImage")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                )
             })
+            .buttonStyle(CapsuleButtonStyle())
         } else if showRobber {
             ZStack{
                 DraggableRobberView(boardVM: board)
@@ -78,7 +88,7 @@ struct GameStateView<Game: SettlersGame>: View {
                 Text("Finish Turn")
             })
             .buttonStyle(CapsuleButtonStyle())
-
+            
         }
     }
     
@@ -89,21 +99,21 @@ struct GameStateView<Game: SettlersGame>: View {
 }
 
 
-struct GameStateView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            GameStateView<LocalSettlersGame>(gameState: .constant(.ended(winner: Player("Tomer"))))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.ended(winner: nil)))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: true, diceRolled: false)))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: true, diceRolled: true)))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: false, diceRolled: true)))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.remotePlayerTurn(player: Player("remote player"))))
-            GameStateView<LocalSettlersGame>(gameState: .constant(.waitingForPlayers(connectedPlayers: [Player("player 1")])))
-        }
-        .environmentObject(BoardViewModel(gameVM: mocGameViewModel))
-        .previewLayout(.fixed(width: 300, height: 100))
-        .preferredColorScheme(.dark)
-        
-    }
-}
+//struct GameStateView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.ended(winner: Player("Tomer"))))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.ended(winner: nil)))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: true, diceRolled: false)))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: true, diceRolled: true)))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.localPlayerTurn(placeKnight: false, diceRolled: true)))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.remotePlayerTurn(player: Player("remote player"))))
+//            GameStateView<LocalSettlersGame>(gameState: .constant(.waitingForPlayers(connectedPlayers: [Player("player 1")])))
+//        }
+//        .environmentObject(BoardViewModel(gameVM: mocGameViewModel))
+//        .previewLayout(.fixed(width: 300, height: 100))
+//        .preferredColorScheme(.dark)
+//        
+//    }
+//}
 

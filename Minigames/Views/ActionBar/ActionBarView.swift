@@ -21,7 +21,7 @@ struct ActionBarView<Game: SettlersGame>: View {
         HStack(alignment: .bottom) {
             
             TabView(selection: $selection) {
-                GameStateView<Game>(gameState: $boardVM.gameVM.gameState)
+                GameStateView<Game>()
                     .tag(0)
                 
                 ResourcesBoxView(player: self.boardVM.gameVM.localPlayer)
@@ -37,20 +37,10 @@ struct ActionBarView<Game: SettlersGame>: View {
             }
             
         }
+        .environmentObject(boardVM)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         
     }
-    
-    private var actionButton: some View {
-        Button("rool dice") {
-            
-        }
-        
-        //                    DraggableRobberView(boardVM: self.boardVM)
-        
-    }
-    
-    
     
 }
 

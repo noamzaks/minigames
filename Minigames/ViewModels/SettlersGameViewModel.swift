@@ -57,9 +57,7 @@ class SettlersGameViewModel<Game>: ObservableObject where Game: SettlersGame {
             .store(in: &cancellables)
         
         game.gameStatePublisher
-            .sink { state in
-                
-            }
+            .assign(to: \.gameState, on: self)
             .store(in: &cancellables)
         
         game.buildingsPublisher

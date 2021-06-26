@@ -79,6 +79,8 @@ class LocalSettlersGame: SettlersGame {
         self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 4, column: 0)!, at: .bottomLeft), get: [.brick], give: [.wool]))
         self.harbors.append(Harbor(on:RoadPath(on: tiles.get(row: 0, column: 2)!, at: .topRight), get: [.brick], give: [.lumber]))
         
+        self.gameState = .localPlayerTurn(placeKnight: false, diceRolled: false)
+        
     }
     
     func validatePurchase(of building: Building) throws -> Bool {
